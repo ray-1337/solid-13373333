@@ -8,3 +8,8 @@
 .pnp.*
 .vscode/**/*
 yarn.lock
+
+# adds
+src/css/raw/raw.css
+src/assets/**/*
+node_modules/**/*
