@@ -1,0 +1,182 @@
+.project,
+.project.open {
+  --transformX: translateX(var(--translateX));
+  -webkit-transform: var(--transformX);
+  -moz-transform: var(--transformX);
+  -o-transform: var(--transformX);
+  transform: var(--transformX)
+}
+
+.project {
+  --translateX: 100%;
+  -webkit-transition: -webkit-transform 1s var(--t_expo_mod);
+  -moz-transition: -moz-transform 1s var(--t_expo_mod);
+  -o-transition: -o-transform 1s var(--t_expo_mod);
+  background: linear-gradient(180deg, #fff, #dedede), -webkit-linear-gradient(180deg, #fff, #dedede);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  overflow-y: auto;
+  padding: 75pt 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 1s var(--t_expo_mod);
+  width: 40%;
+  z-index: 11
+}
+
+.project.open {
+  --translateX: 0%
+}
+
+.project {
+  justify-content: center;
+  overflow-x: hidden
+}
+
+.list {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto
+}
+
+.list::-webkit-scrollbar {
+  height: 10px
+}
+
+.project {
+  background: var(--monetaryBg);
+  padding: 0
+}
+
+.project .tab:nth-child(n+1):nth-child(-n+4) {
+  --delayance: 1s;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0ms linear var(--delayance);
+  -moz-transition: -moz-transform 0ms linear var(--delayance);
+  -o-transition: -o-transform 0ms linear var(--delayance);
+  transform: translateX(100%);
+  transition: transform 0ms linear var(--delayance)
+}
+
+.project.open .tab:nth-child(n+1):nth-child(-n+4) {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0)
+}
+
+.project.open .tab:first-child {
+  --delayance: 0ms
+}
+
+.project.open .tab:first-child,
+.project.open .tab:nth-child(2) {
+  -webkit-transition: -webkit-transform 1s var(--t_expo_mod) var(--delayance);
+  -moz-transition: -moz-transform 1s var(--t_expo_mod) var(--delayance);
+  -o-transition: -o-transform 1s var(--t_expo_mod) var(--delayance);
+  transition: transform 1s var(--t_expo_mod) var(--delayance)
+}
+
+.project.open .tab:nth-child(2) {
+  --delayance: 125ms
+}
+
+.project.open .tab:nth-child(3) {
+  --delayance: 250ms
+}
+
+.project.open .tab:nth-child(3),
+.project.open .tab:nth-child(4) {
+  -webkit-transition: -webkit-transform 1s var(--t_expo_mod) var(--delayance);
+  -moz-transition: -moz-transform 1s var(--t_expo_mod) var(--delayance);
+  -o-transition: -o-transform 1s var(--t_expo_mod) var(--delayance);
+  transition: transform 1s var(--t_expo_mod) var(--delayance)
+}
+
+.project.open .tab:nth-child(4) {
+  --delayance: 375ms
+}
+
+.tab {
+  height: 25%;
+  position: relative;
+  width: 100%
+}
+
+.tab__img,
+.tab__img img {
+  height: 100%;
+  position: relative;
+  width: 100%
+}
+
+.tab__img img {
+  -o-object-fit: cover;
+  object-fit: cover
+}
+
+.tab__info,
+.tab__info p:after {
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition)
+}
+
+.tab__info {
+  --transition: opacity 250ms ease, background 250ms ease;
+  align-items: center;
+  background: 0 0;
+  bottom: 0;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  opacity: 0;
+  padding: 25px;
+  position: absolute;
+  width: 100%
+}
+
+.tab:hover .tab__info {
+  background: linear-gradient(90deg, rgba(18, 17, 18, .5), rgb(18, 17, 18, 0));
+  background: -webkit-linear-gradient(90deg, rgba(18, 17, 18, .5), rgb(18, 17, 18, 0));
+  opacity: 1
+}
+
+.tab__info h3 {
+  font-family: var(--headingFonts);
+  letter-spacing: 1px
+}
+
+.tab__info p {
+  font-family: var(--paragraphFonts);
+  letter-spacing: .75px;
+}
+
+.tab__info p:after {
+  --transition: width 250ms var(--t_expo_mod);
+  background-color: #fff;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: relative;
+  top: 5px;
+  width: 0
+}
+
+.tab__info:hover p:after {
+  width: 100%
+}
