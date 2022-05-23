@@ -26,4 +26,9 @@ export function preventClick(evt: MouseEvent | UIEvent) {
 
 export function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-}
+};
+
+export function generateString(length?: number) {
+  const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";
+  return [...Array(length || 16)].map(_ => characters[~~(Math.random() * characters.length)]).join('');
+};
