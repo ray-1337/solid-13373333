@@ -2,6 +2,13 @@
   "name": "solid-13373333",
   "packageManager": "yarn@3.2.1",
   "private": true,
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "preview": "yarn build && yarn serve"
+  },
   "devDependencies": {
     "typescript": "4.6.3",
     "vite": "^2.9.9",
@@ -9,5 +16,10 @@
   },
   "dependencies": {
     "solid-js": "^1.4.2"
+  },
+  "optionalDependencies": {
+    "@types/marked": "^4.0.3",
+    "marked": "^4.0.16",
+    "simple-icons": "^6.23.0"
   }
 }
