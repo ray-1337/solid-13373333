@@ -18,7 +18,7 @@ export function sleep(ms: number) {
   return new Promise(r => setTimeout(r, ms));
 };
 
-export function preventClick(evt: MouseEvent) {
+export function preventClick(evt: MouseEvent | UIEvent) {
   evt.preventDefault();
   evt.stopPropagation();
   return false;
