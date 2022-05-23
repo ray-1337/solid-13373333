@@ -1,9 +1,18 @@
 import { defineConfig } from 'vite';
+import * as Util from "./src/Util";
+
 import solidPlugin from 'vite-plugin-solid';
-import * as Util from "./src/Util"
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
-  plugins: [solidPlugin()],
+  plugins: [
+    solidPlugin(),
+
+    createHtmlPlugin({
+      minify: true,
+      template: "/index.html"
+    })
+  ],
   
   build: {
     cssCodeSplit: false,
