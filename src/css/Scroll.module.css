@@ -1,0 +1,63 @@
+.scroll {
+  --transition: opacity 125ms linear;
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -o-transition: var(--transition);
+
+  bottom: 10px;
+  opacity: 1;
+  position: fixed;
+  right: 20px;
+  transition: var(--transition);
+  visibility: hidden !important;
+  z-index: 12
+}
+
+.scroll.disappear {
+  opacity: 0
+}
+
+.scroll:before {
+  --animation: scrollingAnimation 1250ms var(--t_expo_mod) infinite;
+  -webkit-animation: var(--animation);
+  -moz-animation: var(--animation);
+  -o-animation: var(--animation);
+  animation: var(--animation);
+
+  background: #000;
+  content: "";
+  height: 100%;
+  max-height: 49.5px;
+  overflow: hidden;
+  position: absolute;
+  right: 12.5px;
+  width: 1px
+}
+
+@media only screen and (max-width:768px) {
+  .scroll.open {
+    visibility: visible !important;
+  }
+}
+
+@keyframes scrollingAnimation {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 0 0
+  }
+
+  50% {
+    transform: scale(1);
+    transform-origin: 0 0
+  }
+
+  50.1% {
+    transform: scale(1);
+    transform-origin: 0 100%
+  }
+
+  to {
+    transform: scaleY(0);
+    transform-origin: 0 100%
+  }
+}
