@@ -1,6 +1,7 @@
 {
   "name": "solid-13373333",
   "packageManager": "yarn@3.2.1",
+  "private": true,
   "devDependencies": {
     "typescript": "4.6.3",
     "vite": "^2.9.9",
