@@ -1,0 +1,57 @@
+.info {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 12.5px 0 !important
+}
+
+.pack {
+  margin: 1.25em 15px 1.25em 0;
+  width: 33.3333%
+}
+
+/* small.about__info__actualAge,
+small.about__info__actualRelationshipStandard {
+  font-size: .85em;
+  letter-spacing: 1px
+} */
+
+.pack h3,
+.pack p {
+  color: black;
+}
+
+.pack h3 {
+  font-size: 17px;
+  letter-spacing: .5px;
+  margin-bottom: .5em
+}
+
+.pack p {
+  font-size: 14px;
+  letter-spacing: .75px;
+}
+
+.pack h3 span {
+  margin-right: 10px
+}
+
+@media only screen and (max-width:768px) {
+  .info {
+    justify-content: space-evenly
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .pack {
+    width: 100%
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .info {
+    flex-direction: column
+  }
+}

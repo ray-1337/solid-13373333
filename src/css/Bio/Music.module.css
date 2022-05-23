@@ -1,0 +1,166 @@
+.music > h1 {
+  color: #000;
+  font-size: 3.5em;
+  letter-spacing: 2px
+}
+
+.music > p {
+  color: #000;
+  letter-spacing: .75px;
+  margin-top: 1em
+}
+
+.favourite {
+  margin: 2.5em 0 5em
+}
+
+.fav_title {
+  align-items: center;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between
+}
+
+.fav_title h1 {
+  color: #000;
+  font-size: 1.25em;
+  width: 35%;
+  letter-spacing: 0.75px;
+}
+
+.fav_title span {
+  background: #000;
+  height: 2.5px;
+  margin-left: 1em;
+  width: 90%
+}
+
+.fav_list {
+  cursor: grab;
+  display: flex;
+  display: -webkit-flex;
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden
+}
+
+.fav_list.grab {
+  cursor: grabbing
+}
+
+.track {
+  margin: unset;
+  position: relative;
+  width: max-content
+}
+
+.track_metadata h3 {
+  letter-spacing: 1px
+}
+
+.track_metadata p {
+  font-size: .8em;
+  letter-spacing: 1px
+}
+
+.track_visit a:hover {
+  opacity: .5
+}
+
+.track_visit a {
+  -webkit-transition: opacity 125ms ease;
+  -moz-transition: opacity 125ms ease;
+  -o-transition: opacity 125ms ease;
+  color: #fff;
+  font-family: var(--paragraphFonts);
+  font-size: .9em;
+  letter-spacing: 2px;
+  text-decoration: unset;
+  text-underline-offset: 0;
+  transition: opacity 125ms ease
+}
+
+.track:hover .track_info .track_metadata,
+.track:hover .track_info .track_visit {
+  --normaleTranslate: translateY(0%);
+  -webkit-transform: var(--normaleTranslate);
+  -moz-transform: var(--normaleTranslate);
+  -o-transform: var(--normaleTranslate);
+  transform: var(--normaleTranslate)
+}
+
+.fav_list::-webkit-scrollbar {
+  height: 6px
+}
+
+.track .track_info .track_metadata,
+.track .track_info .track_visit {
+  --translateY: translateY(-200%);
+  --translateTiming: 250ms;
+  -webkit-transform: var(--translateY);
+  -moz-transform: var(--translateY);
+  -o-transform: var(--translateY);
+  -webkit-transition: -webkit-transform var(--translateTiming) ease;
+  -moz-transition: -moz-transform var(--translateTiming) ease;
+  -o-transition: -o-transform var(--translateTiming) ease;
+  transform: var(--translateY);
+  transition: transform var(--translateTiming) ease
+}
+
+.track_info {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1em;
+  position: absolute;
+  width: 100%;
+  z-index: 10
+}
+
+.track_artwork,
+.track_artwork img {
+  height: 325px;
+  position: relative;
+  width: 325px
+}
+
+.track:nth-child(n+1):nth-child(-n+3):before {
+  background: #000;
+  content: "";
+  display: block;
+  height: 100%;
+  position: relative;
+  position: absolute;
+  width: 100%;
+  z-index: 150
+}
+
+.music.show .favourite section .fav_list .track:before {
+  height: 0%
+}
+
+.music.show .favourite section .fav_list .track:nth-child(n+1):nth-child(-n+3):before {
+  -webkit-transition: height 1.25s var(--t_expo_mod) var(--delayance);
+  -moz-transition: height 1.25s var(--t_expo_mod) var(--delayance);
+  -o-transition: height 1.25s var(--t_expo_mod) var(--delayance);
+  --delayance: 0ms;
+  transition: height 1.25s var(--t_expo_mod) var(--delayance)
+}
+
+.music.show .favourite section .fav_list .track:nth-child(n+2):nth-child(-n+3):before {
+  --delayance: 250ms
+}
+
+.music.show .favourite section .fav_list .track:nth-child(n+3):nth-child(-n+3):before {
+  --delayance: 500ms
+}
+
+@media only screen and (max-width:500px) {
+  .track_artwork,
+  .track_artwork img {
+    height: 250px;
+    position: relative;
+    width: 250px
+  }
+}

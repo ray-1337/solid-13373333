@@ -1,0 +1,156 @@
+.personale > *+* {
+  margin: 35px 0
+}
+
+.personale hr {
+  margin: 20px 0 !important
+}
+
+.personale,
+.personale.open {
+  --transformX: translateX(var(--translateX));
+  -webkit-transform: var(--transformX);
+  -moz-transform: var(--transformX);
+  -o-transform: var(--transformX);
+  transform: var(--transformX)
+}
+
+.personale.open {
+  --translateX: 0%;
+}
+
+.personale {
+  --translateX: 100%;
+  -webkit-transition: -webkit-transform 1s var(--t_expo_mod);
+  -moz-transition: -moz-transform 1s var(--t_expo_mod);
+  -o-transition: -o-transform 1s var(--t_expo_mod);
+  background: linear-gradient(180deg, #fff, #dedede), -webkit-linear-gradient(180deg, #fff, #dedede);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  overflow-y: auto;
+  padding: 75pt 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 1s var(--t_expo_mod);
+  width: 40%;
+  z-index: 11
+}
+
+.personale .banner {
+  --batteringMS: 250ms;
+  -webkit-transition: -webkit-clip-path var(--batteringMS) var(--t_quart);
+  -moz-transition: -webkit-clip-path var(--batteringMS) var(--t_quart);
+  -o-transition: -webkit-clip-path var(--batteringMS) var(--t_quart);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--batteringMS) var(--t_quart)
+}
+
+.personale.open .banner {
+  --batteringMS: 150ms;
+  -webkit-transition: -webkit-clip-path 1s var(--t_quart) var(--batteringMS) !important;
+  -moz-transition: -webkit-clip-path 1s var(--t_quart) var(--batteringMS) !important;
+  -o-transition: -webkit-clip-path 1s var(--t_quart) var(--batteringMS) !important;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1s var(--t_quart) var(--batteringMS) !important
+}
+
+.banner {
+  --borderRadius: 7.5px;
+  -webkit-border-radius: var(--borderRadius);
+  -moz-border-radius: var(--borderRadius);
+  -o-border-radius: var(--borderRadius);
+  background-position: center 42%;
+  background-size: cover;
+  border-radius: var(--borderRadius);
+  min-height: 425px
+}
+
+.realName * {
+  color: #000
+}
+
+.realName h1 {
+  font-size: 25px;
+  margin-bottom: 15px
+}
+
+.realName h1 small {
+  font-size: 14px;
+  font-weight: lighter
+}
+
+.realName p {
+  font-size: 15px
+}
+
+.bioDetail {
+  margin: 15px 0 !important
+}
+
+.bioDetail h1 {
+  color: #000;
+  font-size: 3.5em;
+  letter-spacing: 2px
+}
+
+.bioDetail .__bDFact {
+  padding: 25px 0
+}
+
+.bioDetail .__bDFact p {
+  color: #000;
+  font-size: 17px;
+  letter-spacing: .5px
+}
+
+.educationHistory h1 {
+  color: #000;
+  font-size: 3.5em;
+  letter-spacing: 2px
+}
+
+.educationHistory p {
+  color: #000;
+  letter-spacing: .75px;
+  margin-top: 1em
+}
+
+.educationHistory ul {
+  list-style: disc;
+  margin: 50px 0;
+  padding: 0 25px
+}
+
+.educationHistory ul li {
+  flex-direction: column;
+  font-family: "Plus Jakarta Sans", Lato, Arial, monospace;
+  font-size: 1.15em;
+  margin: 5px 0
+}
+
+@media only screen and (max-width:1440px) {
+  .personale {
+    width: 75%
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .personale {
+    width: 100%
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .personale {
+    padding: 75pt 30px
+  }
+
+  .bioDetail h1 {
+    font-size: 2.5em;
+    letter-spacing: .25px
+  }
+}
