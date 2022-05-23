@@ -1,0 +1,12 @@
+{
+  "name": "solid-13373333",
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "typescript": "4.6.3",
+    "vite": "^2.9.9",
+    "vite-plugin-solid": "^2.2.6"
+  },
+  "dependencies": {
+    "solid-js": "^1.4.2"
+  }
+}
