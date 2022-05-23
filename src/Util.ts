@@ -23,3 +23,7 @@ export function preventClick(evt: MouseEvent) {
   evt.stopPropagation();
   return false;
 };
+
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
