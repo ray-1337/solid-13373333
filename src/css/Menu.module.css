@@ -132,3 +132,65 @@
 .panel ul li:hover:after {
   width: 100%
 }
+
+@media only screen and (max-width:768px) {
+  .inside {
+    flex-direction: column-reverse
+  }
+
+  .list {
+    align-items: center;
+    flex-direction: row;
+    height: auto;
+    margin-left: unset;
+    padding: 0 20px;
+    width: 100%
+  }
+
+  .transition {
+    width: auto
+  }
+
+  .panel ul li+li {
+    margin-left: 1em
+  }
+
+  .panel ul li {
+    display: inline-block;
+    font-size: .9em
+  }
+
+  .personalImg,
+  .personalImgInside,
+  .personalImgInside img {
+    width: 100%
+  }
+}
+
+@media only screen and (max-height:600px) {
+  .personalImgInside,
+  .personalImgInside img {
+    height: auto;
+    width: 16pc
+  }
+
+  .personalImgInside {
+    height: 16pc;
+    width: 16pc
+  }
+
+  .list {
+    height: 16pc
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .list {
+    align-items: flex-start;
+    flex-direction: column-reverse
+  }
+
+  .transition p {
+    margin: 0
+  }
+}
