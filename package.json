@@ -10,7 +10,7 @@
     "preview": "yarn build && yarn serve"
   },
   "devDependencies": {
-    "typescript": "4.6.3",
+    "typescript": "latest",
     "vite": "^2.9.9",
     "vite-plugin-solid": "^2.2.6"
   },
