@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal, onMount } from 'solid-js';
+import { Component, createEffect, createSignal, lazy, onMount } from 'solid-js';
 
 import style from "../../css/Bio/Bio.Main.module.css";
 import closeStyle from "../../css/Close.module.css";
@@ -12,7 +12,7 @@ import Bio_Info from './Info';
 import Bio_Music from './Music';
 import Bio_Occupation from './Occupation';
 import Bio_Personality from './Personality';
-import Bio_Tools from './Tools';
+const Bio_Tools = lazy(() => import('./Tools'));
 
 const Index: Component = () => {
   let personaleParent!: HTMLDivElement;
