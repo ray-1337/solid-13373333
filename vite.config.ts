@@ -27,7 +27,7 @@ export default defineConfig({
           "https://fonts.gstatic.com/s/",
         ],
         "style-src": [
-          "self",
+          "self", "unsafe-inline",
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/",
           "https://fonts.googleapis.com/"
         ]
