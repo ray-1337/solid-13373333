@@ -140,10 +140,6 @@ function ExperienceList(): Array<{ timing: string; language: string; }> {
     {
       timing: Util.calculateMonth("2021-06-14") + " months",
       language: "Redis"
-    },
-    {
-      timing: Util.calculateMonth("2021-10-17") + " months",
-      language: "Webpack"
     }
   ];
 };
