@@ -1,6 +1,7 @@
 import { Component, For } from 'solid-js';
 
 import style from "../../css/Bio/Info.module.css";
+import * as Util from "../../Util";
 
 const Bio_Info: Component = () => {
   return (
@@ -35,8 +36,8 @@ function List(): Array<{ name: string, value: string, iconSpan: string; }> {
     },
     {
       name: "Status",
-      value: "Single ;)",
-      iconSpan: "fa-heart-crack"
+      value: `Taken (${Util.calculateDay("05-06-2022")} days ago)`,
+      iconSpan: "fa-heart"
     },
     {
       name: "Email",
