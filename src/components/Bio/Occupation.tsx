@@ -45,7 +45,7 @@ function List(): Array<{ company: string, url: string, title: string; }> {
     {
       company: "Geometry Dash Indonesia",
       url: "https://discord.gg/JaPQzFk",
-      title: "Server Manager"
+      title: "Former Server Manager"
     },
     // {
     //   company: "ScreenToGif",

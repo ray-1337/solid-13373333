@@ -86,10 +86,10 @@ function List() {
       image: _projImg_antinsfw,
       url: "https://ray1337.gitbook.io/anti-nsfw-official-documentation/"
     },
-    {
-      title: "GMDI Discord Bot",
-      image: _projImg_gmdibot,
-      url: "https://github.com/ray-1337/gmdi-private-bot/"
-    }
+    // {
+    //   title: "GMDI Discord Bot",
+    //   image: _projImg_gmdibot,
+    //   url: "https://github.com/ray-1337/gmdi-private-bot/"
+    // }
   ]
 };
