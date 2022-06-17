@@ -36,8 +36,8 @@ function List(): Array<{ name: string, value: string, iconSpan: string; }> {
     },
     {
       name: "Status",
-      value: `Taken (${Util.calculateDay("05-06-2022")} days ago)`,
-      iconSpan: "fa-heart"
+      value: `[]`,
+      iconSpan: "fa-heart-crack"
     },
     {
       name: "Email",
