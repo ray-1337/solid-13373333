@@ -36,8 +36,8 @@ function List(): Array<{ name: string, value: string, iconSpan: string; }> {
     },
     {
       name: "Status",
-      value: `[]`,
-      iconSpan: "fa-heart-crack"
+      value: `Taken`,
+      iconSpan: "fa-heart"
     },
     {
       name: "Email",
