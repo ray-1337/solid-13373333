@@ -1,31 +1,196 @@
-.occupation h1 {
-  color: #000;
-  font-size: 3.5em;
-  letter-spacing: 2px
+.occupation {
+  margin: 0 !important;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  min-width: 100%;
 }
 
-.occupation p {
-  color: #000;
-  letter-spacing: .75px;
-  margin-top: 1em
+.occupationTitle {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  z-index: 10;
 }
 
-.occupation ul {
-  list-style: disc;
-  margin: 50px 0;
-  padding: 0 25px
-}
-
-.occupation ul li {
-  flex-direction: column;
+.occupationTitle h1 {
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 500;
   font-family: var(--headingFonts);
-  font-size: 1.15em;
-  margin: 5px 0
+  background: black;
+  padding: 5px;
 }
 
-@media only screen and (max-width:600px) {
-  .occupation h1 {
-    font-size: 2.5em;
+.occupationListImage:after {
+  content: "";
+  background: linear-gradient(270deg, black 0%, transparent 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+
+.occupationListImage span {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  display: block;
+  position: absolute;
+  
+  transform: scale(1.3);
+}
+
+.occupationList {
+  visibility: hidden;
+}
+
+.occupationList.ocu_Open {
+  visibility: visible;
+}
+
+.occupationList.ocu_Open .occupationListImage span {
+  transition: transform 500ms var(--t_quart) 125ms;
+  transform: scale(1);
+}
+
+.occupationSubmissive {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2.5em;
+}
+
+.occupationSubmissive_text {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.occupationSubmissive_text * {
+  opacity: 0;
+}
+
+.occupationSubmissive_text h1 {
+  font-size: var(--headingFonts);
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+.occupationList.ocu_Open .occupationSubmissive_text h1 {
+  animation: movingTextAppears 500ms var(--t_quart) 0s forwards;
+}
+
+.occupationList.ocu_Open .occupationSubmissive_text p {
+  animation: movingTextAppears 500ms var(--t_quart) 250ms forwards;
+}
+
+.occupationSubmissive_button {
+  display: flex;
+  display: -webkit-flex;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+.occupationSubmissive_button > span {
+  margin: 10px;
+  background: white;
+  border-radius: 100%;
+  padding: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.occupationSubmissive_button > span.btnStop {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.occupationSubmissive_button span.btnLeft svg,
+.occupationSubmissive_button span.btnRight svg {
+  fill: black;
+  display: block;
+}
+
+/* uncentered */
+.occupationSubmissive_button span.btnLeft svg {
+  padding-right: 2.5px;
+}
+
+.occupationSubmissive_button span.btnRight svg {
+  padding-left: 2.5px;
+}
+
+.occupationSubmissive_button span.btnRight:hover svg {
+  animation: hoverMovingRight 250ms ease-in-out;
+}
+
+.occupationSubmissive_button span.btnLeft:hover svg {
+  animation: hoverMovingLeft 250ms ease-in-out;
+}
+
+@keyframes hoverMovingLeft {
+  0% {
+      transform: translateX(0%)
+  }
+
+  49.9% {
+      transform: translateX(-100%)
+  }
+
+  50.1% {
+      transform: translateX(100%)
+  }
+
+  to {
+      transform: translateX(0%)
+  }
+}
+
+@keyframes hoverMovingRight {
+  0% {
+      transform: translateX(0%)
+  }
+
+  49.9% {
+      transform: translateX(100%)
+  }
+
+  50.1% {
+      transform: translateX(-100%)
+  }
+
+  to {
+      transform: translateX(0%)
+  }
+}
+
+@keyframes movingTextAppears {
+  0% {
+      transform: translateY(50%);
+      opacity: 0;
+  }
+
+  to {
+      transform: translateY(0%);
+      opacity: 1;
+  }
+}
+
+@media only screen and (max-width:992px) {
+  .occupationSubmissive_text h1 {
+    font-size: 25px;
     letter-spacing: .25px
   }
 }
