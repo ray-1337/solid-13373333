@@ -25,10 +25,11 @@ function List(): Array<string> {
     "frugal person.",
     "agoraphobia.",
     "minimalist.",
-    "caffeine addict.",
-    "myopia user.",
-    "zero interest in games, except minecraft & geometry dash.",
-    "cat & dog lovers, for now.",
-    "i can smash my keyboard over 115 wpm."
+    "caffeine addicts.",
+    "myopia.",
+    "slowly having interests in games.",
+    "cat & dog lovers.",
+    "i can smash my keyboard over 115 wpm.",
+    "easy to get distracted and losing focus."
   ];
 };
