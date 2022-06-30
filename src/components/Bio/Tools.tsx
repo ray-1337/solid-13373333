@@ -149,6 +149,6 @@ function EssentialsList() {
     "some of my project uses [**Nanoexpress**](https://npmjs.com/package/nanoexpress) because it's blazingly [fast](https://web-frameworks-benchmark.netlify.app/result?asc=0&l=javascript&metric=totalRequestsPerS).",
     "i use [**Eris**](https://npmjs.com/package/eris) as my main Discord bot framework.",
     "im using [**ZorinOS**](https://zorin.com/) for my temporary workstation OS.",
-    "this website is currently wrapped with [Solid.js](https://solidjs.com), 'cause reactjs sucks **s."
+    "this website is currently wrapped with [**Solid.js**](https://solidjs.com), 'cause ~~reactjs~~ sucks ••s."
   ];
 };
