@@ -60,7 +60,7 @@ const Index: Component = () => {
         <h1>Education</h1>
         <p>i hate school. that's it.</p>
         <ul>
-          <li> <b>2021 - present</b> / Vocational High School (dropout soon) </li>
+          <li> <b>2021 - present</b> / Vocational High School </li>
         </ul>
       </div>
 
