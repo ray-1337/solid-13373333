@@ -34,11 +34,11 @@ function List(): Array<{ name: string, value: string, iconSpan: string; }> {
       value: "July 24th",
       iconSpan: "fa-balance-scale"
     },
-    {
-      name: "Status",
-      value: `Taken (${Util.calculateDay("05-06-2022")} days ago)`,
-      iconSpan: "fa-heart"
-    },
+    // {
+    //   name: "Status",
+    //   value: `Taken`,
+    //   iconSpan: "fa-heart"
+    // },
     {
       name: "Email",
       value: "personal@13373333.one",
