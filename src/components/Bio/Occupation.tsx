@@ -54,7 +54,7 @@ function List(): Array<{ company: string, url: string, title: string; }> {
     // },
     {
       company: "Community Development",
-      url: "https://community-development-shop.tebex.io/",
+      url: "https://store.cdev.shop/",
       title: "Lead Developer"
     }
   ]
