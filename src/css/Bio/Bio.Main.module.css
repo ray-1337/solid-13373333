@@ -40,22 +40,45 @@
   z-index: 11
 }
 
+.bannerWrapper {
+  overflow: hidden;
+  max-width: 100%;
+  transform: translateZ(0);
+  z-index: auto;
+  min-height: 425px;
+}
+
 .personale .banner {
-  --batteringMS: 250ms;
-  -webkit-transition: -webkit-clip-path var(--batteringMS) var(--t_quart);
-  -moz-transition: -webkit-clip-path var(--batteringMS) var(--t_quart);
-  -o-transition: -webkit-clip-path var(--batteringMS) var(--t_quart);
+  --timeGlobal: 250ms;
+  --scaleGlobal: scale(1.25);
+
+  transform: var(--scaleGlobal);
+  -webkit-transform: var(--scaleGlobal);
+  -moz-transform: var(--scaleGlobal);
+  -o-transform: var(--scaleGlobal);
+
+  transition: clip-path var(--timeGlobal) var(--t_quart), transform 500ms var(--t_quart);
+  -webkit-transition: -webkit-clip-path var(--timeGlobal) var(--t_quart), -webkit-transform 500ms var(--t_quart);
+  -moz-transition: -webkit-clip-path var(--timeGlobal) var(--t_quart), -moz-transform 500ms var(--t_quart);
+  -o-transition: -webkit-clip-path var(--timeGlobal) var(--t_quart), -o-transform 500ms var(--t_quart);
+  
   clip-path: inset(0 100% 0 0);
-  transition: clip-path var(--batteringMS) var(--t_quart)
 }
 
 .personale.open .banner {
-  --batteringMS: 150ms;
-  -webkit-transition: -webkit-clip-path 1s var(--t_quart) var(--batteringMS) !important;
-  -moz-transition: -webkit-clip-path 1s var(--t_quart) var(--batteringMS) !important;
-  -o-transition: -webkit-clip-path 1s var(--t_quart) var(--batteringMS) !important;
+  --timeGlobal: 150ms;
+
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+
+  transition: clip-path 1s var(--t_quart) var(--timeGlobal), transform 500ms var(--t_quart) 500ms !important;
+  -webkit-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -webkit-transform 500ms var(--t_quart) 500ms !important;
+  -moz-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -moz-transform 500ms var(--t_quart) 500ms !important;
+  -o-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -o-transform 500ms var(--t_quart) 500ms !important;
+
   clip-path: inset(0 0 0 0);
-  transition: clip-path 1s var(--t_quart) var(--batteringMS) !important
 }
 
 .banner {

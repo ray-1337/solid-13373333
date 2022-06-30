@@ -27,7 +27,15 @@ const Index: Component = () => {
         <span class="fas fa-arrow-right"></span>
       </div>
 
-      <div class={style.banner} onContextMenu={(evt) => Util.preventClick(evt)} draggable={false} style={{ "background-image": `url('${personalImage}')` }}> </div>
+      <div class={style.bannerWrapper}>
+        <div 
+        class={style.banner} 
+        onContextMenu={(evt) => Util.preventClick(evt)} 
+        draggable={false} 
+        style={{ "background-image": `url('${personalImage}')` }}>
+          
+        </div>
+      </div>
 
       <div class={style.realName}>
         <h1>Hizkia Ray</h1>
