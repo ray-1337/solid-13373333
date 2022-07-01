@@ -1,6 +1,7 @@
-import { Component, For, onMount } from 'solid-js';
+import { Component, For, onCleanup, onMount } from 'solid-js';
 
 import style from "../../css/Bio/Occupation.module.css";
+import mainStyle from "../../css/Bio/Bio.Main.module.css";
 
 import _premid from "../../assets/images/occupation/premid.webp";
 import _musixmatch from "../../assets/images/occupation/musixmatch.webp";
@@ -14,6 +15,7 @@ const Bio_Occupation: Component = () => {
   let leftArrow!: HTMLSpanElement;
   let rightArrow!: HTMLSpanElement;
   let currentVisitURI = "";
+  let jobPanel!: HTMLDivElement;
 
   function setVisitButton(index: number) {
     return List()[index].url ? currentVisitURI = List()[index].url : void(0);
@@ -67,10 +69,23 @@ const Bio_Occupation: Component = () => {
       leftArrow.classList.add(style.btnStop);
       setVisitButton(0);
     };
+
+    document.getElementsByClassName(mainStyle.personale)[0].addEventListener("scroll", () => showJobListTransition());
   });
 
+  onCleanup(() => {
+    document.getElementsByClassName(mainStyle.personale)[0].removeEventListener("scroll", () => showJobListTransition())
+  });
+
+  function showJobListTransition() {
+    const defaultOffset = 100;
+    if ((document.getElementsByClassName(mainStyle.personale)[0] as HTMLDivElement).scrollTop >= jobPanel.offsetTop - defaultOffset) {
+      jobPanel.classList.remove(style.closement);
+    };
+  };
+
   return (
-    <div class={style.occupation}>
+    <div class={`${style.occupation} ${style.closement}`} ref={(evt) => jobPanel = evt}>
       <div class={style.occupationTitle}>
         <h1>Jobs</h1>
         {/* <p>any jobs that can fulfill my financial crisis, regardless the pain.</p> */}
