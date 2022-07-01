@@ -55,7 +55,7 @@
 
 .insider h1 {
   bottom: 25px;
-  font-family: Product Sans;
+  font-family: var(--headingFonts);
   font-size: 1.57em;
   font-weight: 400;
   left: 25px;
