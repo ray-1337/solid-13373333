@@ -121,7 +121,7 @@ function List(): Array<{ company: string, url: string, title: string; image: str
     {
       company: "Musixmatch",
       url: "https://musixmatch.com/profile/3vUCAFfAsV8PVItc7aCqUNbH56gBSl9UqvdmiP-S1ix4bhNE2WnM1CZdlqKLD8gS4mHMysttQiOqtDH4SAEhMitmRIJfwLb0SiqENe3mRB4zd4z9JjrbeQuSVoLAmZtlhJTFiX-ebEyLkbpFDET9otKvUbk",
-      title: "Lyrics Curator",
+      title: "Lyrics Contributor",
       image: _musixmatch
     },
     {
