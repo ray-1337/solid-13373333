@@ -132,6 +132,10 @@
   padding-left: 2.5px;
 }
 
+.occupationSubmissive_button span:not(.btnStop):hover {
+  opacity: 0.78;
+}
+
 .occupationSubmissive_button span.btnRight:hover svg {
   animation: hoverMovingRight 250ms ease-in-out;
 }
