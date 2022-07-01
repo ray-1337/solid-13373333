@@ -35,7 +35,7 @@ const Project: Component = () => {
               <div class={style.tab}>
                 <div class={style["tab__img"]}>
                   <img
-                    loading='lazy'
+                    // loading='lazy'
                     onContextMenu={(evt) => Util.preventClick(evt)}
                     onDragStart={(evt) => Util.preventClick(evt)}
                     src={state.image}
