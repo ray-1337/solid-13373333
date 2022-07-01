@@ -9,7 +9,7 @@
 .occupationTitle {
   position: absolute;
   left: 30px;
-  top: 30px;
+  top: 40px;
   z-index: 10;
 }
 
@@ -40,7 +40,7 @@
   display: block;
   position: absolute;
   
-  transform: scale(1.3);
+  transform: scale(1.15);
 }
 
 .occupationList {
@@ -52,7 +52,7 @@
 }
 
 .occupationList.ocu_Open .occupationListImage span {
-  transition: transform 500ms var(--t_quart) 125ms;
+  transition: transform 500ms var(--t_quart) 0ms;
   transform: scale(1);
 }
 
