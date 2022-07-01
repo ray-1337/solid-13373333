@@ -96,14 +96,56 @@
 }
 
 .occupationSubmissive_button {
+  position: absolute;
   display: flex;
   display: -webkit-flex;
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
+  width: 100%;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.occupationSubmissive_button > span {
+.occupationSubmissive_button .btnRedirect {
+  margin: 25px;
+
+  display: flex;
+  display: -webkit-flex;
+
+  background-color: black;
+  border-radius: 5%;
+  padding: 5px;
+  cursor: pointer;
+
+  transition: background-color 100ms ease-out;
+}
+
+.occupationSubmissive_button .btnRedirect:hover {
+  background-color: #181818;
+}
+
+.occupationSubmissive_button .btnRedirect > * {
+  margin: 5px;
+}
+
+.occupationSubmissive_button .btnRedirect h1 {
+  font-family: var(--headingFonts);
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  font-size: 20px;
+}
+
+.occupationSubmissive_button .btnRedirect svg {
+  fill: white;
+}
+
+.occupationSubmissive_button .btnPanel {
+  display: flex;
+  display: -webkit-flex;
+  position: relative;
+  margin: 25px;
+}
+
+.occupationSubmissive_button .btnPanel span {
   margin: 10px;
   background: white;
   border-radius: 100%;
@@ -112,35 +154,35 @@
   cursor: pointer;
 }
 
-.occupationSubmissive_button > span.btnStop {
+.occupationSubmissive_button .btnPanel span.btnStop {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.occupationSubmissive_button span.btnLeft svg,
-.occupationSubmissive_button span.btnRight svg {
+.occupationSubmissive_button .btnPanel span.btnLeft svg,
+.occupationSubmissive_button .btnPanel span.btnRight svg {
   fill: black;
   display: block;
 }
 
 /* uncentered */
-.occupationSubmissive_button span.btnLeft svg {
+.occupationSubmissive_button .btnPanel span.btnLeft svg {
   padding-right: 2.5px;
 }
 
-.occupationSubmissive_button span.btnRight svg {
+.occupationSubmissive_button .btnPanel span.btnRight svg {
   padding-left: 2.5px;
 }
 
-.occupationSubmissive_button span:not(.btnStop):hover {
+.occupationSubmissive_button .btnPanel span:not(.btnStop):hover {
   opacity: 0.78;
 }
 
-.occupationSubmissive_button span.btnRight:hover svg {
+.occupationSubmissive_button .btnPanel span.btnRight:hover svg {
   animation: hoverMovingRight 250ms ease-in-out;
 }
 
-.occupationSubmissive_button span.btnLeft:hover svg {
+.occupationSubmissive_button .btnPanel span.btnLeft:hover svg {
   animation: hoverMovingLeft 250ms ease-in-out;
 }
 
