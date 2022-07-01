@@ -54,7 +54,7 @@
 }
 
 .project {
-  background: var(--monetaryBg);
+  background: transparent;
   padding: 0
 }
 
