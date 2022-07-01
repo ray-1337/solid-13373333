@@ -178,11 +178,11 @@
   opacity: 0.78;
 }
 
-.occupationSubmissive_button .btnPanel span.btnRight:hover svg {
+.occupationSubmissive_button .btnPanel span.btnRight:not(.btnStop):hover svg {
   animation: hoverMovingRight 250ms ease-in-out;
 }
 
-.occupationSubmissive_button .btnPanel span.btnLeft:hover svg {
+.occupationSubmissive_button .btnPanel span.btnLeft:not(.btnStop):hover svg {
   animation: hoverMovingLeft 250ms ease-in-out;
 }
 
