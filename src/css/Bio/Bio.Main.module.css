@@ -73,10 +73,10 @@
   -moz-transform: scale(1);
   -o-transform: scale(1);
 
-  transition: clip-path 1s var(--t_quart) var(--timeGlobal), transform 500ms var(--t_quart) 500ms !important;
-  -webkit-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -webkit-transform 500ms var(--t_quart) 500ms !important;
-  -moz-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -moz-transform 500ms var(--t_quart) 500ms !important;
-  -o-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -o-transform 500ms var(--t_quart) 500ms !important;
+  transition: clip-path 1s var(--t_quart) var(--timeGlobal), transform 500ms var(--t_quart) 250ms !important;
+  -webkit-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -webkit-transform 500ms var(--t_quart) 250ms !important;
+  -moz-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -moz-transform 500ms var(--t_quart) 250ms !important;
+  -o-transition: -webkit-clip-path 1s var(--t_quart) var(--timeGlobal), -o-transform 500ms var(--t_quart) 250ms !important;
 
   clip-path: inset(0 0 0 0);
 }
