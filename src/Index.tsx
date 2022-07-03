@@ -1,5 +1,5 @@
 import { Component, lazy, onCleanup, onMount } from 'solid-js';
-import { MetaProvider, Meta, Link } from "solid-meta";
+import { MetaProvider, Meta, Link, Title } from "solid-meta";
 
 import Menu from './components/Menu';
 
@@ -27,6 +27,7 @@ const Index: Component = () => {
 
   return (
     <MetaProvider>
+      <Title>sorry for wasting your times. []</Title>
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@ray__1337" />
       <Meta name="twitter:creator" content="@ray__1337" />
