@@ -5,8 +5,8 @@ import PanelContext from "./Panel.Context";
 
 import style from "../css/Menu.module.css";
 
-import menuMe from "../assets/images/tab/me.webp";
-import menuSocial from "../assets/images/tab/social.webp";
+import menuMe from "../assets/images/personal_content/IMG_20220703_195227.webp";
+import menuSocial from "../assets/images/personal_content/luckytohaveyou.webp";
 import menuProject from "../assets/images/tab/project.webp";
 
 const Menu: Component = () => {
