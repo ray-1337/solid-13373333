@@ -1,9 +1,10 @@
 import { Component, lazy, onCleanup, onMount } from 'solid-js';
-import { MetaProvider, Meta } from "solid-meta";
+import { MetaProvider, Meta, Link } from "solid-meta";
 
 import Menu from './components/Menu';
 
 import personalImage from "./assets/images/personal_content/IMG_20220703_195320.webp";
+import favicon from "./assets/images/favicon.ico";
 
 const Bio = lazy(() => import("./components/Bio/Index"));
 const Social = lazy(() => import('./components/Social'));
@@ -35,6 +36,7 @@ const Index: Component = () => {
       <Meta property="og:description" content="In his right hand he held seven stars, and coming out of his mouth was a sharp, double-edged sword. His face was like the sun shining in all its brilliance."/>
       <Meta property="twitter:image" content={personalImage}/>
       <Meta property="og:image" content={personalImage}/>
+      <Link href={favicon} rel="shortcut icon"/>
 
       <>
         <Menu></Menu>
