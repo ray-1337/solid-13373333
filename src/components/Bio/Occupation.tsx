@@ -98,7 +98,9 @@ const Bio_Occupation: Component = () => {
               <div class={style.occupationList} ref={(evt) => occupationList.push(evt)}>
                 {/* image */}
                 <div class={style.occupationListImage}>
-                  <span style={{ "background-image": `url('${state.image}')` }}></span>
+                  <span style={
+                    Object.assign({ "background-image": `url('${state.image}')` }, state.resigned ? {"filter": `grayscale(1) brightness(0.5)`} : {})
+                  }></span>
                 </div>
 
                 {/* text and button */}
