@@ -49,9 +49,7 @@ const Index: Component = () => {
       <div class={style.bioDetail}>
         <h1>About</h1>
         <div class={style.__bDFact}>
-          <p>
-            hello, my name is Ray, and i can considered myself as a full-stack developer.
-          </p>
+          <p>hello.</p>
         </div>
       </div>
 
