@@ -39,7 +39,7 @@ export default defineConfig({
     cssCodeSplit: false,
     minify: true,
     target: 'esnext',
-    polyfillDynamicImport: false,
+    // polyfillDynamicImport: false,
     rollupOptions: {
       output: {
         assetFileNames: () => {
