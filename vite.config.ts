@@ -43,15 +43,15 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: () => {
-          return "firstclass_upinthesky/" + Util.generateString(32) + "[extname]";
+          return "__e__/" + Util.generateString(32) + "[extname]";
         },
 
         chunkFileNames: () => {
-          return "firstclass_upinthesky/" + Util.generateString(32) + ".js";
+          return "__e__/" + Util.generateString(32) + ".js";
         },
 
         entryFileNames: () => {
-          return "firstclass_upinthesky/" + Util.generateString(32) + ".js";
+          return "__e__/" + Util.generateString(32) + ".js";
         }
       }
     }
