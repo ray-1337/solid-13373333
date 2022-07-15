@@ -5,6 +5,9 @@ import solidPlugin from 'vite-plugin-solid';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import viteCSP from "vite-plugin-csp";
 
+import dotenv from "dotenv";
+const env = dotenv.config({path: process.cwd() + "/.env"});
+
 export default defineConfig({
   plugins: [
     solidPlugin(),
@@ -55,5 +58,9 @@ export default defineConfig({
         }
       }
     }
+  },
+
+  preview: {
+    port: +env.parsed!["PORT"]
   }
 });
