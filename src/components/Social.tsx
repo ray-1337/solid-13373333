@@ -23,7 +23,7 @@ const Social: Component = () => {
           let color = state.colorArray.length > 1 ? state.colorArray.map((val, i) => {
             let math = Math.min(Math.max(Math.round((100 / state.colorArray.length) * i), 0), 100);
             
-            return `${val} ${math}%`;
+            return `${val} ${(i == 1 && state.colorArray.length == 2) ? 90 : math}%`;
           }) : state.colorArray[0];
 
           let combined: JSX.CSSProperties = state.colorArray.length > 1 ?
