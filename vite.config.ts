@@ -46,15 +46,15 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: () => {
-          return "__e__/" + Util.generateString(32) + "[extname]";
+          return "_assets/" + Util.generateString(32) + "[extname]";
         },
 
         chunkFileNames: () => {
-          return "__e__/" + Util.generateString(32) + ".js";
+          return "_assets/" + Util.generateString(32) + ".js";
         },
 
         entryFileNames: () => {
-          return "__e__/" + Util.generateString(32) + ".js";
+          return "_assets/" + Util.generateString(32) + ".js";
         }
       }
     }
