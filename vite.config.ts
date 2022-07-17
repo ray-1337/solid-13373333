@@ -61,6 +61,6 @@ export default defineConfig({
   },
 
   preview: {
-    port: +env.parsed!["PORT"]
+    port: Number(env.parsed?.["PORT"] || 5173)
   }
 });
