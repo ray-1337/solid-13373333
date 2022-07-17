@@ -8,6 +8,7 @@ import style from "../css/Menu.module.css";
 import menuMe from "../assets/images/personal_content/IMG_20220703_195227.webp";
 import menuSocial from "../assets/images/personal_content/luckytohaveyou.webp";
 import menuProject from "../assets/images/tab/project.webp";
+import menuGear from "../assets/images/tab/gear.webp";
 
 const Menu: Component = () => {
   let [birthdayTime, setBirthdayTime] = createSignal("");
@@ -60,6 +61,10 @@ const Menu: Component = () => {
           <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside}`}>
             <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={menuProject} />
           </div>
+          
+          <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside}`}>
+            <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={menuGear} />
+          </div>
 
         </div>
 
@@ -69,6 +74,7 @@ const Menu: Component = () => {
               <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("personal")}>personale</li>
               <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("network")}>social</li>
               <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("projects")}>projects</li>
+              <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("gear")}>gear</li>
             </ul>
           </div>
 

@@ -5,6 +5,7 @@
   --paragraphFonts: "Plus Jakarta Sans", "Arial", monospace;
   --bg: #dad5c7;
   --monetaryBg: #121112;
+  --expoOut: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body,

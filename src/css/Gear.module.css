@@ -1,0 +1,390 @@
+.squarish {
+  overflow: hidden;
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  max-width: 40%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  --standardTransform:
+  translateY(-101%);
+  transform: var(--standardTransform);
+  -webkit-transform: var(--standardTransform);
+  -moz-transform: var(--standardTransform);
+  -o-transform: var(--standardTransform);
+  transition: transform 500ms var(--expoOut);
+  -webkit-transition: -webkit-transform 500ms var(--expoOut);
+  -moz-transition: -moz-transform 500ms var(--expoOut);
+  -o-transition: -o-transform 500ms var(--expoOut);
+  flex-direction: column;
+  /* z-index: 10; */
+}
+
+.squarish.active {
+  --standardTransform: translateY(0%);
+  transform: var(--standardTransform);
+  -webkit-transform: var(--standardTransform);
+  -moz-transform: var(--standardTransform);
+  -o-transform: var(--standardTransform);
+}
+
+.squarish:before {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: #121112;
+  z-index: 22;
+  visibility: hidden;
+}
+
+.squarish.active:before {
+  animation: squarishInsideOpening 1s var(--expoOut) 500ms 1 normal forwards;
+}
+
+.squarish .inside {
+  width: 100%;
+  min-height: 100vh;
+  
+  visibility: hidden;
+
+  --transGlobalUsage: visibility 0s linear 750ms;
+  transition: var(--transGlobalUsage);
+  -webkit-transition: var(--transGlobalUsage);
+  -moz-transition: var(--transGlobalUsage);
+  -o-transition: var(--transGlobalUsage);
+}
+
+.squarish.active .inside {
+  visibility: visible;
+}
+
+.squarish .close {
+  z-index: 40;
+}
+
+.squarish .close,
+.squarish .close span {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+}
+
+.squarish .close {
+  top: 2em;
+  right: 2em;
+  display: block;
+  cursor: pointer;
+}
+
+.squarish .close span:before,
+.squarish .close span:after {
+  content: "";
+  background: yellow;
+  position: absolute;
+  height: 1px;
+  width: 25px;
+}
+
+.squarish .close span:before {
+  top: 12.5px;
+
+  --transGlobalUsage: rotate(-45deg);
+  transform: var(--transGlobalUsage);
+  -webkit-transform: var(--transGlobalUsage);
+  -moz-transform: var(--transGlobalUsage);
+  -o-transform: var(--transGlobalUsage);
+
+  transition: transform 125ms ease-out;
+  -webkit-transition: transform 125ms ease-out;
+  -moz-transition: transform 125ms ease-out;
+  -o-transition: transform 125ms ease-out;
+}
+
+.squarish .close span:after {
+  top: 12.5px;
+
+  --transGlobalUsage: rotate(45deg);
+  transform: var(--transGlobalUsage);
+  -webkit-transform: var(--transGlobalUsage);
+  -moz-transform: var(--transGlobalUsage);
+  -o-transform: var(--transGlobalUsage);
+
+  transition: transform 125ms ease-out;
+  -webkit-transition: transform 125ms ease-out;
+  -moz-transition: transform 125ms ease-out;
+  -o-transition: transform 125ms ease-out;
+}
+
+.squarish .close:hover span:before {
+  --transGlobalUsage: rotate(-30deg);
+  transform: var(--transGlobalUsage);
+  -webkit-transform: var(--transGlobalUsage);
+  -moz-transform: var(--transGlobalUsage);
+  -o-transform: var(--transGlobalUsage);
+}
+
+.squarish .close:hover span:after {
+  --transGlobalUsage: rotate(30deg);
+  transform: var(--transGlobalUsage);
+  -webkit-transform: var(--transGlobalUsage);
+  -moz-transform: var(--transGlobalUsage);
+  -o-transform: var(--transGlobalUsage);
+}
+
+.squarish.gear {
+	background: white;
+}
+
+.squarish.gear .inside {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+}
+
+.squarish.gear .title {
+	background: yellow;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	z-index: 23;
+}
+
+.squarish.gear .title h1 {
+	margin: 0.25em;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
+
+.squarish.gear .inside .gearlist {
+	display: flex;
+	display: -webkit-flex;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	overflow-y: auto;
+	flex-direction: column;
+}
+
+.squarish.gear .inside .gearlist::-webkit-scrollbar {
+	height: auto;
+	width: 2px;
+}
+
+.squarish.gear .inside .gearlist::-webkit-scrollbar-thumb {
+	background-color: white;
+}
+
+.squarish.gear .inside .gearlist::-webkit-scrollbar-track {
+	background-color: #1a1a1a;
+}
+
+.squarish.gear .inside .gearlist .gear {
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+.squarish.gear .inside .gearlist .gear:before {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	content: "";
+	background: black;
+	opacity: 0.45;
+	z-index: 20;
+}
+
+.squarish.gear .inside .gearlist .gear .gearbgprev {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+}
+
+.squarish.gear .inside .gearlist .gear .info {
+	position: absolute;
+	display: flex;
+	display: -webkit-flex;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	/* 	filter: invert(1); */
+	/* 	mix-blend-mode: difference; */
+	/* 	color: black; */
+	z-index: 21;
+}
+
+.squarish.gear .inside .gearlist .gear .info * {
+	color: white;
+}
+
+.squarish.gear .inside .gearlist .gear .info h1 {
+	font-family: var(--headingFonts);
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin: 0.25em 1em;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.squarish.gear .inside .gearlist .gear .info p {
+	font-size: 16px;
+	margin: 0 1em 1em;
+}
+
+.squarish.gear .inside .gearlist .gear .info a {
+	font-family: var(--paragraphFonts);
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 2px;
+	margin: 1em 0;
+	font-weight: bold;
+
+	--globalTrans: opacity 75ms linear;
+	transition: var(--globalTrans);
+	-webkit-transition: var(--globalTrans);
+	-moz-transition: var(--globalTrans);
+	-o-transition: var(--globalTrans);
+}
+
+.squarish.gear .inside .gearlist .gear .info a:visited,
+.squarish.gear .inside .gearlist .gear .info a:clicked {
+	color: white;
+}
+
+.squarish.gear .inside .gearlist .gear .info a:hover {
+	opacity: 0.4;
+}
+
+@keyframes gearTitleActive {
+	0% { transform: translateX(-100%) }
+	49.9% { transform: translateX(0%) }
+	50.1% { transform: translateX(0%) }
+	to { transform: translateX(100%) }
+}
+
+@-webkit-keyframes gearTitleActive {
+	0% { -webkit-transform: translateX(-100%) }
+	49.9% { -webkit-transform: translateX(0%) }
+	50.1% { -webkit-transform: translateX(0%) }
+	to { -webkit-transform: translateX(100%) }
+}
+
+@-moz-keyframes gearTitleActive {
+	0% { -moz-transform: translateX(-100%) }
+	49.9% { -moz-transform: translateX(0%) }
+	50.1% { -moz-transform: translateX(0%) }
+	to { -moz-transform: translateX(100%) }
+}
+
+@-o-keyframes gearTitleActive {
+	0% { -o-transform: translateX(-100%) }
+	49.9% { -o-transform: translateX(0%) }
+	50.1% { -o-transform: translateX(0%) }
+	to { -o-transform: translateX(100%) }
+}
+
+@keyframes squarishInsideOpening {
+	from {
+		visibility: visible;
+	}
+
+	0.1% {
+		transform: translateY(-100%)
+	}
+
+	49.9% {
+		transform: translateY(0%)
+	}
+
+	50.1% {
+		transform: translateY(0%)
+	}
+
+	99.9% {
+		transform: translateY(100%)
+	}
+
+	to {
+		visibility: hidden;
+	}
+}
+
+.squarish.gear .title {
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+}
+
+.squarish.gear .title:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #121112;
+  z-index: 30;
+
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+}
+
+.squarish.gear.active .title {
+  clip-path: inset(0 0% 0 0) !important;
+  -webkit-clip-path: inset(0 0% 0 0) !important;
+
+  --transGlobalUsage: clip-path 500ms var(--expoOut) 500ms, -webkit-clip-path 500ms var(--expoOut) 500ms;
+  transition: var(--transGlobalUsage);
+  -webkit-transition: var(--transGlobalUsage);
+  -moz-transition: var(--transGlobalUsage);
+  -o-transition: var(--transGlobalUsage);
+}
+
+.squarish.gear.active .title:before {
+  animation: gearTitleActive 1s var(--expoOut) 1s 1 normal forwards;
+}
+
+.squarish.gear .title h1 {
+  visibility: hidden;
+  color: black !important;
+}
+
+.squarish.gear.active .title h1 {
+  visibility: visible;
+
+  --transGlobalUsage: visibility 0s linear 1250ms;
+  transition: var(--transGlobalUsage);
+  -webkit-transition: var(--transGlobalUsage);
+  -moz-transition: var(--transGlobalUsage);
+  -o-transition: var(--transGlobalUsage);
+}
+
+@media only screen and (max-width:1080px) {
+  .squarish {
+	  max-width: 100%;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .squarish.gear .inside .gearlist .gear .info h1 {
+    font-size: 1em;
+  }
+
+	.squarish.gear .inside .gearlist .gear .info p {
+    font-size: 0.9em;
+  }
+}

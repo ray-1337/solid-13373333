@@ -9,6 +9,7 @@ import favicon from "./assets/images/favicon.ico";
 const Bio = lazy(() => import("./components/Bio/Index"));
 const Social = lazy(() => import('./components/Social'));
 const Project = lazy(() => import('./components/Project'));
+const Gear = lazy(() => import('./components/Gear'));
 
 const Index: Component = () => {
   function ignoreTab(event: KeyboardEvent) {
@@ -47,6 +48,8 @@ const Index: Component = () => {
         <Social></Social>
 
         <Project></Project>
+
+        <Gear></Gear>
       </>
     </MetaProvider>
   );
