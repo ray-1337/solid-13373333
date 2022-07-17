@@ -5,6 +5,9 @@ import solidPlugin from 'vite-plugin-solid';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import viteCSP from "vite-plugin-csp";
 
+import dotenv from "dotenv";
+const env = dotenv.config({path: process.cwd() + "/.env"});
+
 export default defineConfig({
   plugins: [
     solidPlugin(),
@@ -39,21 +42,25 @@ export default defineConfig({
     cssCodeSplit: false,
     minify: true,
     target: 'esnext',
-    polyfillDynamicImport: false,
+    // polyfillDynamicImport: false,
     rollupOptions: {
       output: {
         assetFileNames: () => {
-          return "__e__/" + Util.generateString(32) + "[extname]";
+          return "_assets/" + Util.generateString(32) + "[extname]";
         },
 
         chunkFileNames: () => {
-          return "__e__/" + Util.generateString(32) + ".js";
+          return "_assets/" + Util.generateString(32) + ".js";
         },
 
         entryFileNames: () => {
-          return "__e__/" + Util.generateString(32) + ".js";
+          return "_assets/" + Util.generateString(32) + ".js";
         }
       }
     }
+  },
+
+  preview: {
+    port: +env.parsed!["PORT"]
   }
 });
