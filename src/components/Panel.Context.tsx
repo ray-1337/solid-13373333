@@ -1,7 +1,11 @@
 import { createSignal, createRoot } from "solid-js";
 
+export type Panel = "personal" | "network" | "projects" | "gear";
+
+export const list: Panel[] = ["personal", "network", "projects", "gear"];
+
 function createCounter() {
-  const [panel, setPanel] = createSignal<"personal" | "network" | "projects" | null>(null);
+  const [panel, setPanel] = createSignal<Panel | null>(null);
   return { panel, setPanel };
 }
 

@@ -1,7 +1,7 @@
-import { Component, createEffect, createSignal, onMount, Signal } from 'solid-js';
+import { Component, createEffect, createSignal, For } from 'solid-js';
 import * as Util from "../Util";
 
-import PanelContext from "./Panel.Context";
+import PanelContext, {list as PanelList} from "./Panel.Context";
 
 import style from "../css/Menu.module.css";
 
@@ -45,36 +45,41 @@ const Menu: Component = () => {
     panelImage[indexBased].classList.add(style.piiActive)
   };
 
+  let personalImageList = [
+    menuMe, menuSocial, menuProject, menuGear
+  ];
+
   return (
     <div class={style.menu} ref={_menu_}>
       <div class={style.inside}>
         <div class={style.personalImg}>
-
-          <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside} ${style.piiActive}`}>
-            <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={menuMe} />
-          </div>
-
-          <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside}`}>
-            <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={menuSocial} />
-          </div>
-
-          <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside}`}>
-            <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={menuProject} />
-          </div>
-          
-          <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside}`}>
-            <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={menuGear} />
-          </div>
-
+          <For each={personalImageList}>{
+            (state, index) => {
+              return (
+                <div ref={(evt) => panelImage.push(evt)} class={`${style.personalImgInside} ${index() == 0 ? style.piiActive : ""}`}>
+                  <img draggable={false} onContextMenu={(evt) => Util.preventClick(evt)} loading="lazy" src={state} />
+                </div>
+              );
+            }
+          }</For>
         </div>
 
         <div class={style.list}>
           <div class={style.panel}>
             <ul>
-              <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("personal")}>personale</li>
-              <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("network")}>social</li>
-              <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("projects")}>projects</li>
-              <li ref={(evt) => panel.push(evt)} onMouseOver={(evt) => personalImageAppear(evt.currentTarget)} onclick={() => PanelContext.setPanel("gear")}>gear</li>
+              <For each={PanelList}>{
+                (state) => {
+                  if (state)
+                  return (
+                    <li
+                    ref={(evt) => panel.push(evt)}
+                    onMouseOver={(evt) => personalImageAppear(evt.currentTarget)}
+                    onclick={() => PanelContext.setPanel(state)}>
+                      {state}
+                    </li>
+                  );
+                }
+              }</For>
             </ul>
           </div>
 
