@@ -12,6 +12,7 @@ import _k509 from "../assets/images/gears/redragon.k509.webp";
 import _mdrzx110 from "../assets/images/gears/sony.mdrzx110.webp";
 import _lx08 from "../assets/images/gears/usams.lx08.webp";
 import _wd500 from "../assets/images/gears/wdelements.500gb.webp";
+import _sonicgearAirphone from "../assets/images/gears/sonicgear.airphone.7.webp";
 
 const gears = [
   {
@@ -25,6 +26,12 @@ const gears = [
     description: "Not a gamer, but this is speedy enough for daily basis.",
     url: "https://www.samsung.com/us/computing/memory-storage/solid-state-drives/870-evo-sata-2-5-ssd-500gb-mz-77e500b-am/",
     image: _evo870
+  },
+  {
+    title: "SonicGear AIRPHONE 7",
+    description: "My head is too big, this almost doesn't fit, but it did. Overall, the audio quality is banger.",
+    url: "https://leapfroglobal.com/sonicgear/Sonicgear-airphone-7/sonicgear-personal-audio-bluetooth-headphones",
+    image: _sonicgearAirphone
   },
   {
     title: "Samsung LED Monitor (SF35 Series, S22F350)",
