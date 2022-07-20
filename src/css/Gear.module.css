@@ -244,6 +244,7 @@
 .squarish.gear .inside .gearlist .gear .info p {
 	font-size: 16px;
 	margin: 0 1em 1em;
+  text-align: center;
 }
 
 .squarish.gear .inside .gearlist .gear .info a {
