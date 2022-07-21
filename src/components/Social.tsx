@@ -14,7 +14,7 @@ const Social: Component = () => {
 
   return (
     <div class={style.parasocial} ref={socialParent}>
-      <div class={closeStyle.close} onclick={() => {PanelContext.setPanel(null); socialParent.scrollTo({top: 0, behavior: "smooth"})}}>
+      <div class={closeStyle.close} onclick={() => {PanelContext.setPanel(null); socialParent.scrollTo({top: 0, behavior: "auto"})}}>
         <span class="fas fa-arrow-right"></span>
       </div>
 

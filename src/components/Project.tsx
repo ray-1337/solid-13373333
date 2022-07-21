@@ -23,7 +23,7 @@ const Project: Component = () => {
 
   return (
     <div class={style.project} ref={projectParent}>
-      <div style={{"z-index": 10}} class={closeStyle.close} onclick={() => { PanelContext.setPanel(null); projectList.scrollTo({ top: 0, behavior: "smooth" }) }}>
+      <div style={{"z-index": 10}} class={closeStyle.close} onclick={() => { PanelContext.setPanel(null); projectList.scrollTo({ top: 0, behavior: "auto" }) }}>
         <span style={{color: "white"}} class="fas fa-arrow-right"></span>
       </div>
 

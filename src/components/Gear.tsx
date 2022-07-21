@@ -83,7 +83,7 @@ const Gear: Component = () => {
     <div class={`${style.squarish} ${style.gear}`} ref={gearParent}>
       <div class={style.title}> <h1>Workstation Gears</h1> </div>
 
-      <div class={style.close} onclick={() => {PanelContext.setPanel(null); gearInsider.scrollTo({top: 0, behavior: "smooth"})}}>
+      <div class={style.close} onclick={() => {PanelContext.setPanel(null); gearInsider.scrollTo({top: 0, behavior: "auto"})}}>
         <span></span>
       </div>
 
