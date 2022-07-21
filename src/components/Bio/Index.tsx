@@ -16,9 +16,14 @@ const Bio_Tools = lazy(() => import('./Tools'));
 
 const Index: Component = () => {
   let personaleParent!: HTMLDivElement;
+  let bannerDefinite!: HTMLDivElement;
 
   createEffect(() => {
     PanelContext.panel() == "personal" ? personaleParent.classList.add(style.open) : personaleParent.classList.remove(style.open);
+  });
+
+  onMount(() => {
+    bannerDefinite.style.backgroundImage = `url('${personalImage}')`;
   });
 
   return (
@@ -29,10 +34,10 @@ const Index: Component = () => {
 
       <div class={style.bannerWrapper}>
         <div 
+        ref={(evt) => bannerDefinite = evt}
         class={style.banner} 
         onContextMenu={(evt) => Util.preventClick(evt)} 
-        draggable={false} 
-        style={{ "background-image": `url('${personalImage}')` }}>
+        draggable={false}>
           
         </div>
       </div>
