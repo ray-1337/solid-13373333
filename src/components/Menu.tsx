@@ -35,7 +35,7 @@ const Menu: Component = () => {
       };
     }, 1000);
 
-    PanelContext.panel() ? _menu_.classList.add(style.hide) : _menu_.classList.remove(style.hide);
+    PanelContext.panel() ? _menu_.classList.add(style.hide) : setTimeout(() => _menu_.classList.remove(style.hide), 250);
   });
 
   function personalImageAppear(event: HTMLLIElement) {
