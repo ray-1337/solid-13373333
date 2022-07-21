@@ -92,8 +92,10 @@ const Bio_Occupation: Component = () => {
 
   function showJobListTransition() {
     const defaultOffset = 100;
-    if ((document.getElementsByClassName(mainStyle.personale)[0] as HTMLDivElement).scrollTop >= jobPanel.offsetTop - defaultOffset) {
+    if (jobPanel.classList.contains(style.closement) && (document.getElementsByClassName(mainStyle.personale)[0] as HTMLDivElement).scrollTop >= jobPanel.offsetTop - defaultOffset) {
       jobPanel.classList.remove(style.closement);
+      document.getElementsByClassName(mainStyle.personale)[0].removeEventListener("scroll", () => showJobListTransition());
+      return;
     };
   };
 
