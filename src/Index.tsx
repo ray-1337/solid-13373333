@@ -29,7 +29,7 @@ const Index: Component = () => {
   return (
     <MetaProvider>
       <Title>sorry for wasting your times. []</Title>
-      <Meta name="twitter:card" content="summary_large_image" />
+      {/* <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@ray__1337" />
       <Meta name="twitter:creator" content="@ray__1337" />
       <Meta name="theme-color" content="#f7a937"/>
@@ -37,7 +37,7 @@ const Index: Component = () => {
       <Meta property="og:title" content="13373333.one" />
       <Meta property="og:description" content="In his right hand he held seven stars, and coming out of his mouth was a sharp, double-edged sword. His face was like the sun shining in all its brilliance."/>
       <Meta property="twitter:image" content={personalImage}/>
-      <Meta property="og:image" content={personalImage}/>
+      <Meta property="og:image" content={personalImage}/> */}
       <Link href={favicon} rel="shortcut icon"/>
 
       <>
