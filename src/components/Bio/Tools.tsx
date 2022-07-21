@@ -1,5 +1,49 @@
+import {
+  siJavascript,
+  siTypescript,
+  siHtml5,
+  siCss3,
+
+  siReact,
+  siWebpack,
+  siNodedotjs,
+  siTsnode,
+  siNpm,
+  siYarn,
+  siAdobephotoshop,
+  siAdobepremierepro,
+  siRedis,
+  siMongodb,
+  siGithub,
+  siVisualstudio,
+  siVisualstudiocode,
+  siFirebase,
+  siHeroku,
+  siNginx,
+  siTensorflow,
+  siUbuntu,
+  siExpress,
+  siJquery,
+  siMarkdown,
+  siTrello,
+  siGitbook,
+  siSupabase,
+  siReactrouter,
+  siSolid,
+  siVite,
+
+  siRust,
+  siNextdotjs,
+  siVuedotjs,
+  siNuxtdotjs,
+  siRedux,
+  siPostgresql,
+  siFastify,
+  siWebassembly,
+  siElectron
+} from "simple-icons/icons";
+
 import { Component, createSignal, For } from 'solid-js';
-import SimpleIcons from "simple-icons";
 import { marked } from "marked";
 
 import * as Util from "../../Util";
@@ -79,37 +123,29 @@ const Bio_Tools: Component = () => {
 
 export default Bio_Tools;
 
-type GeneralListType = { title: string, path: string, hex: string, type: "Language" | "Technology" | "Interested" };
+type GeneralListType = { title: string, path: string, hex: string, type: string };
+
 function IconList(): Array<GeneralListType> {
   let list: Array<GeneralListType> = [];
 
-  let language = ["javascript", "typescript", "html5", "css3"];
-  let interested = ["rust", "nextdotjs", "vuedotjs", "nuxtdotjs", "redux", "postgresql", "fastify", "webassembly", "electron"];
-  let technology = [
-    "react", "webpack", "nodedotjs", "tsnode", "npm", "yarn",
-    "adobephotoshop", "adobepremierepro", "redis", "mongodb",
-    "github", "visualstudio", "visualstudiocode", "firebase",
-    "heroku", "nginx", "tensorflow", "ubuntu", 'express', 'jquery',
-    "markdown", "trello", "gitbook", "supabase", "reactrouter", "solid", "vite"
-  ];
-
-  for (const ctx of language) {
-    const icon = SimpleIcons.Get(ctx);
-    list.push({ title: icon.title, path: icon.path, hex: icon.hex, type: "Language" });
+  let icon = {
+    language: [siJavascript, siTypescript, siHtml5, siCss3],
+    technology: [siReact, siWebpack, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite],
+    interested: [siRust, siNextdotjs, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron]
   };
 
-  for (const ctx of technology) {
-    const icon = SimpleIcons.Get(ctx);
-    list.push({ title: icon.title, path: icon.path, hex: icon.hex, type: "Technology" });
-  };
-
-  for (const ctx of interested) {
-    const icon = SimpleIcons.Get(ctx);
-    list.push({ title: icon.title, path: icon.path, hex: icon.hex, type: "Interested" });
+  for (const ctx of Object.entries(icon)) {
+    for (const siIcon of ctx[1]) {
+      list.push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, type: capitalize(ctx[0]) });
+    };
   };
 
   return list;
 };
+
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 function ExperienceList(): Array<{ timing: string; language: string; }> {
   return [
