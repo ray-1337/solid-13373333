@@ -11,6 +11,7 @@ import _cdev from "../../assets/images/occupation/cdev.webp";
 
 const Bio_Occupation: Component = () => {
   let occupationList: HTMLDivElement[] = [];
+  let occupationBgList: HTMLSpanElement[] = [];
 
   let leftArrow!: HTMLSpanElement;
   let rightArrow!: HTMLSpanElement;
@@ -57,10 +58,20 @@ const Bio_Occupation: Component = () => {
 
     setVisitButton(calculation);
 
+    // give image
+    assignOccupationImage(calculation);
+
     occupationList[index].classList.remove(style.ocu_Open);
     occupationList[calculation].classList.add(style.ocu_Open);
 
     return;
+  };
+
+  function assignOccupationImage(index: number) {
+    if (!occupationBgList[index].style.backgroundImage && occupationBgList[index].dataset["srcset"]) {
+      occupationBgList[index].style.backgroundImage = `url('${occupationBgList[index].dataset["srcset"]}')`;
+      occupationBgList[index].dataset["srcset"] = "";
+    };
   };
 
   onMount(() => {
@@ -69,6 +80,8 @@ const Bio_Occupation: Component = () => {
       leftArrow.classList.add(style.btnStop);
       setVisitButton(0);
     };
+
+    assignOccupationImage(0);
 
     document.getElementsByClassName(mainStyle.personale)[0].addEventListener("scroll", () => showJobListTransition());
   });
@@ -98,8 +111,11 @@ const Bio_Occupation: Component = () => {
               <div class={style.occupationList} ref={(evt) => occupationList.push(evt)}>
                 {/* image */}
                 <div class={style.occupationListImage}>
-                  <span style={
-                    Object.assign({ "background-image": `url('${state.image}')` }, state.resigned ? {"filter": `grayscale(1) brightness(0.5)`} : {})
+                  <span 
+                  ref={(evt) => occupationBgList.push(evt)}
+                  data-srcset={state.image}
+                  style={
+                    Object.assign({ /*"background-image": `url('${state.image}')`*/ }, state.resigned ? {"filter": `grayscale(1) brightness(0.5)`} : {})
                   }></span>
                 </div>
 
