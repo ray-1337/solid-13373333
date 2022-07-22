@@ -1,9 +1,10 @@
-import { Component, lazy, onCleanup, onMount } from 'solid-js';
-import { MetaProvider, Meta, Link, Title } from "solid-meta";
+import { Component, createEffect, lazy, onCleanup, onMount } from 'solid-js';
+import { MetaProvider, Link } from "solid-meta";
 
 import Menu from './components/Menu';
+import { randomizer } from './Util';
 
-import personalImage from "./assets/images/personal_content/IMG_20220703_195320.webp";
+// import personalImage from "./assets/images/personal_content/IMG_20220703_195320.webp";
 import favicon from "./assets/images/favicon.ico";
 
 const Bio = lazy(() => import("./components/Bio/Index"));
@@ -26,9 +27,17 @@ const Index: Component = () => {
     document.documentElement.removeEventListener("keydown", (event) => ignoreTab(event));
   })
 
+  createEffect(() => {
+    let passive = ["breaking my heart", "disappointing me", "ruining me"];
+    let exes = ["a____i", "d___o", "a__5"];
+
+    setInterval(() => {
+      document.title = `thx u for ${randomizer(passive)}, ` + randomizer(exes) + ".";
+    }, 1e3);
+  });
+
   return (
     <MetaProvider>
-      <Title>sorry for wasting your times. []</Title>
       {/* <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@ray__1337" />
       <Meta name="twitter:creator" content="@ray__1337" />
