@@ -32,3 +32,7 @@ export function generateString(length?: number) {
   const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";
   return [...Array(length || 16)].map(_ => characters[~~(Math.random() * characters.length)]).join('');
 };
+
+export function randomizer<R>(array: Array<R>) {
+  return array[Math.floor(Math.random() * array.length)];
+};
