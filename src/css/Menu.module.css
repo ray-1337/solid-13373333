@@ -36,7 +36,7 @@
 }
 
 .transition p {
-  color: black;
+  color: white;
   font-family: monospace;
   font-size: .85em;
   letter-spacing: 1px;
@@ -95,7 +95,7 @@
 
 .panel ul li {
   --transition: opacity 125ms ease;
-  color: black;
+  color: white;
   cursor: pointer;
   flex-direction: column;
   font-family: var(--headingFonts);
