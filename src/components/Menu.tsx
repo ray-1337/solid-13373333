@@ -29,7 +29,7 @@ const Menu: Component = () => {
 
       if (date < 0) {
         clearInterval(interval);
-        return setBirthdayTime("");
+        return setBirthdayTime("00:00:01");
       } else {
         return setBirthdayTime(totale);
       };
