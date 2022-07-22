@@ -29,7 +29,7 @@ const Index: Component = () => {
 
   createEffect(() => {
     let passive = ["breaking my heart", "disappointing me", "ruining me"];
-    let exes = ["a____i", "d___o", "a__5"];
+    let exes = ["a____i", "d___o", "a__5", "z__s"];
 
     setInterval(() => {
       document.title = `thx u for ${randomizer(passive)}, ` + randomizer(exes) + ".";
