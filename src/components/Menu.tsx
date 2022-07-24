@@ -20,7 +20,7 @@ const Menu: Component = () => {
   createEffect(() => {
     // birthday
     let interval = setInterval(() => {
-      let date = new Date("Jul 24 2022 00:00:00 GMT+0800").getTime() - Date.now();
+      let date = new Date("Jul 24 2023 00:00:00 GMT+0800").getTime() - Date.now();
       let hour = Math.floor(date / (36e5));
       let min = Math.floor((date % (36e5)) / (60e3));
       let sec = Math.floor((date % (60e3)) / 1e3);
@@ -29,7 +29,7 @@ const Menu: Component = () => {
 
       if (date < 0) {
         clearInterval(interval);
-        return setBirthdayTime("00:00:01");
+        return setBirthdayTime("00:00:00");
       } else {
         return setBirthdayTime(totale);
       };
