@@ -22,7 +22,11 @@ export default defineConfig({
         "default-src": "self",
         "script-src": "self",
         "frame-src": ["none"],
-        "img-src": ["self"],
+        "img-src": [
+          "self",
+          "https://cdn.discordapp.com/app-assets/",
+          "https://cdn.discordapp.com/avatars/331265944363991042/"
+        ],
         "connect-src": ["self"],
         "font-src": [
           "self",
