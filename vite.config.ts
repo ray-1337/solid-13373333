@@ -25,7 +25,9 @@ export default defineConfig({
         "img-src": [
           "self",
           "https://cdn.discordapp.com/app-assets/",
-          "https://cdn.discordapp.com/avatars/331265944363991042/"
+          "https://cdn.discordapp.com/avatars/331265944363991042/",
+          "https://cdn.discordapp.com/banners/331265944363991042/",
+          Array.from(Array(6).keys()).map(id => `https://cdn.discordapp.com/embed/avatars/${id}.png`)
         ],
         "connect-src": ["self"],
         "font-src": [
