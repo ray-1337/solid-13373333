@@ -19,16 +19,10 @@ export default defineConfig({
 
     viteCSP({
       policy: {
+        "img-src": [ 'self', 'https://cdn.discordapp.com/app-assets/', 'https://cdn.discordapp.com/avatars/331265944363991042/', 'https://cdn.discordapp.com/banners/331265944363991042/', 'https://cdn.discordapp.com/embed/avatars/0.png', 'https://cdn.discordapp.com/embed/avatars/1.png', 'https://cdn.discordapp.com/embed/avatars/2.png', 'https://cdn.discordapp.com/embed/avatars/3.png', 'https://cdn.discordapp.com/embed/avatars/4.png', 'https://cdn.discordapp.com/embed/avatars/5.png' ],
         "default-src": "self",
         "script-src": "self",
         "frame-src": ["none"],
-        "img-src": [
-          "self",
-          "https://cdn.discordapp.com/app-assets/",
-          "https://cdn.discordapp.com/avatars/331265944363991042/",
-          "https://cdn.discordapp.com/banners/331265944363991042/",
-          Array.from(Array(6).keys()).map(id => `https://cdn.discordapp.com/embed/avatars/${id}.png`)
-        ],
         "connect-src": ["self"],
         "font-src": [
           "self",
