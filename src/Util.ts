@@ -36,3 +36,9 @@ export function generateString(length?: number) {
 export function randomizer<R>(array: Array<R>) {
   return array[Math.floor(Math.random() * array.length)];
 };
+
+export function getRandomIntInclusive(min: number, max: number) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
