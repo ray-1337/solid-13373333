@@ -76,6 +76,11 @@ function List() {
       colorArray: ["#003087", "#009cde"]
     },
     {
+      url: "https://monkeytype.com/profile/u3IXbBVc81Rit6bbrdHHykm7XLE3",
+      title: "Monkeytype",
+      colorArray: ["#333436", "#e2b615"]
+    },
+    {
       url: "https://crowdin.com/profile/ray1337",
       title: "Crowdin",
       colorArray: ["#aad23b", "#fdb714"]
