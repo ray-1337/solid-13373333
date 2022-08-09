@@ -8,6 +8,7 @@ import _g102 from "../assets/images/gears/logitech.g102.webp";
 import _evo870 from "../assets/images/gears/samsungssdevo.870.webp";
 import _s22f350 from "../assets/images/gears/samsung.s22f350.webp";
 import _imperion from "../assets/images/gears/imperion.ddr3.8x2.webp";
+import _sadesdragonwolf from "../assets/images/gears/sades.dragonwolf.webp";
 import _k509 from "../assets/images/gears/redragon.k509.webp";
 import _mdrzx110 from "../assets/images/gears/sony.mdrzx110.webp";
 import _lx08 from "../assets/images/gears/usams.lx08.webp";
@@ -44,6 +45,12 @@ const gears = [
     description: "Looks sus to you, but it just works, on the fly.",
     url: "https://www.tokopedia.com/imperionofficial/ram-imperion-ddr3-8gb-1600-mhz-pc12800-ram-pc-longdimm-102",
     image: _imperion
+  },
+  {
+    title: "Sades Dragon Wolf [TKL]",
+    description: "Super fucking loud keyboard, but crunchy.",
+    url: "https://www.tokopedia.com/sades-official/sades-dragon-wolf-tkl-mechanical-gaming-keyboard-switch-cherry-mx-keyboard",
+    image: _sadesdragonwolf
   },
   {
     title: "Redragon K509 DYAUS 7",
