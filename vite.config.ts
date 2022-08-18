@@ -8,6 +8,8 @@ import viteCSP from "vite-plugin-csp";
 import dotenv from "dotenv";
 const env = dotenv.config({path: process.cwd() + "/.env"});
 
+const oneTimeRenderCode = Util.generateString(12);
+
 export default defineConfig({
   plugins: [
     solidPlugin(),
@@ -46,15 +48,15 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: () => {
-          return "_assets/" + Util.generateString(32) + "[extname]";
+          return `s/${oneTimeRenderCode}/[hash][extname]`;
         },
 
         chunkFileNames: () => {
-          return "_assets/" + Util.generateString(32) + ".js";
+          return `s/${oneTimeRenderCode}/[hash].js`;
         },
 
         entryFileNames: () => {
-          return "_assets/" + Util.generateString(32) + ".js";
+          return `s/${oneTimeRenderCode}/[hash].js`;
         }
       }
     }
