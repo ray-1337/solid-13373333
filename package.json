@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "preview": "yarn build && yarn serve"
+    "preview": "rm -rf dist && mkdir dist && yarn build && yarn serve"
   },
   "devDependencies": {
     "@types/node": "^18.7.6",
