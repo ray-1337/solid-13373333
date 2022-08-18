@@ -20,20 +20,12 @@ const Index: Component = () => {
   };
 
   onMount(() => {
+    document.title = "unsatisfied future.";
     document.documentElement.addEventListener("keydown", (event) => ignoreTab(event));
   });
 
   onCleanup(() => {
     document.documentElement.removeEventListener("keydown", (event) => ignoreTab(event));
-  })
-
-  createEffect(() => {
-    let passive = ["breaking my heart", "disappointing me", "ruining me"];
-    let exes = ["a____i", "d___o", "a__5", "z__s"];
-
-    setInterval(() => {
-      document.title = `thx u for ${randomizer(passive)}, ` + randomizer(exes) + ".";
-    }, 1e3);
   });
 
   return (
