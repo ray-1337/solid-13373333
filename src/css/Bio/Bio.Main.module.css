@@ -86,7 +86,7 @@
   -webkit-border-radius: var(--borderRadius);
   -moz-border-radius: var(--borderRadius);
   -o-border-radius: var(--borderRadius);
-  background-position: center 45%;
+  background-position: center 75%;
   background-size: cover;
   border-radius: var(--borderRadius);
   min-height: 425px
