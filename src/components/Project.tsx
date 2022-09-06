@@ -13,6 +13,8 @@ import _projImg_blobproj from "../assets/images/project/blobproj.webp";
 import _projImg_antinsfw from "../assets/images/project/antinsfw.webp";
 import _projImg_gmdibot from "../assets/images/project/gmdibot.webp";
 
+import _projImg_cdev from "../assets/images/occupation/cdev.webp";
+
 const Project: Component = () => {
   let projectParent!: HTMLDivElement;
   let projectList!: HTMLDivElement;
@@ -72,6 +74,11 @@ function List() {
       url: "https://github.com/ray-1337/solid-13373333"
     },
     {
+      title: "Community Development",
+      image: _projImg_cdev,
+      url: "https://cdev.shop"
+    },
+    {
       title: "13:37",
       image: _projImg_1337,
       url: "https://open.spotify.com/artist/70AzjYUmP524pQbJXWWJoa"
@@ -86,10 +93,10 @@ function List() {
       image: _projImg_antinsfw,
       url: "https://ray1337.gitbook.io/anti-nsfw-official-documentation/"
     },
-    // {
-    //   title: "GMDI Discord Bot",
-    //   image: _projImg_gmdibot,
-    //   url: "https://github.com/ray-1337/gmdi-private-bot/"
-    // }
+    {
+      title: "GMDI Discord Bot",
+      image: _projImg_gmdibot,
+      url: "https://github.com/ray-1337/gmdi-private-bot/"
+    }
   ]
 };
