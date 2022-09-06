@@ -31,16 +31,20 @@ import {
   siReactrouter,
   siSolid,
   siVite,
+  siSequelize,
+  siPostgresql,
+  siElectron,
+  siPostman,
+  siPostcss,
+  siRoblox, // roblox studio*
 
   siRust,
   siNextdotjs,
   siVuedotjs,
   siNuxtdotjs,
   siRedux,
-  siPostgresql,
   siFastify,
   siWebassembly,
-  siElectron
 } from "simple-icons/icons";
 
 import { Component, createSignal, For } from 'solid-js';
@@ -130,8 +134,7 @@ function IconList(): Array<GeneralListType> {
 
   let icon = {
     language: [siJavascript, siTypescript, siHtml5, siCss3],
-    technology: [siReact, siWebpack, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite],
-    interested: [siRust, siNextdotjs, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron]
+    technology: [siReact, siWebpack, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss],    interested: [siRust, siNextdotjs, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron]
   };
 
   for (const ctx of Object.entries(icon)) {
