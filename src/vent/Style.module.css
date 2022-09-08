@@ -71,6 +71,8 @@
   padding: 1rem;
   margin: 1rem 0;
   color: white;
+  font-family: var(--paragraphFonts);
+  font-size: 0.9em;
 }
 
 .vent_date {
