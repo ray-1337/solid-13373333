@@ -9,6 +9,7 @@ import menuMe from "../assets/images/personal_content/limbo.webp";
 import menuSocial from "../assets/images/personal_content/luckytohaveyou.webp";
 import menuProject from "../assets/images/tab/project.webp";
 import menuGear from "../assets/images/tab/gear.webp";
+import menuVent from "../vent/assets/cry.webp";
 
 const Menu: Component = () => {
   let [birthdayTime, setBirthdayTime] = createSignal("");
@@ -46,7 +47,7 @@ const Menu: Component = () => {
   };
 
   let personalImageList = [
-    menuMe, menuSocial, menuProject, menuGear
+    menuMe, menuSocial, menuProject, menuGear, menuVent
   ];
 
   return (
@@ -74,8 +75,8 @@ const Menu: Component = () => {
                     <li
                     ref={(evt) => panel.push(evt)}
                     onMouseOver={(evt) => personalImageAppear(evt.currentTarget)}
-                    onclick={() => PanelContext.setPanel(state)}>
-                      {state}
+                    onclick={() => state.startsWith("-") ? window.open(window.location.href + state.replace(/[-]/gim, ""), "_self") : PanelContext.setPanel(state)}>
+                      {state.replace(/[-]/gim, "")}
                     </li>
                   );
                 }
