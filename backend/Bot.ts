@@ -82,7 +82,7 @@ client.on("interactionCreate", async (interaction) => {
               style: Constants.TextInputStyles.PARAGRAPH,
               minLength: 1,
               // @ts-ignore
-              maxLength: 4096,
+              maxLength: 2048,
               required: true, type: Constants.ComponentTypes.TEXT_INPUT,
               customID: "vent_message"
             }]
