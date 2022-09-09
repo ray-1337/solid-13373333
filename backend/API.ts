@@ -8,7 +8,7 @@ import NodeCache from "node-cache";
 import ms from "ms";
 
 // internal caching
-const cache = new NodeCache({stdTTL: Math.round(ms("15m") / 1000)});
+const cache = new NodeCache({stdTTL: Math.round(ms("5m") / 1000)});
 
 // secret from .env
 const secret = dotenv.config({path: path.join(__dirname, "/.env")});
@@ -35,8 +35,9 @@ app.get("/vent", async (_, res) => {
       return res.json(JSON.parse(ventCache));
     } else {
       const allVenting = await VentContext.findAll();
-      cache.set("vent", JSON.stringify(allVenting));
       if (!allVenting?.length) return res.json([]);
+
+      cache.set("vent", JSON.stringify(allVenting));
 
       return res.json(allVenting);
     };
