@@ -1,13 +1,20 @@
-import { Component, onMount, For } from "solid-js";
+import { Component, onMount, For, createSignal } from "solid-js";
 import Style from "./Style.module.css";
-import Vents from "./VentList";
+
+interface VentComponents {
+  date: Date;
+  message: string;
+  images?: string;
+}
 
 const Vent: Component = () => {
+  const [vents, setVents] = createSignal<VentComponents[] | null>(null);
+
   let introHead!: HTMLDivElement;
   let introWarning!: HTMLDivElement;
   let _vents!: HTMLDivElement;
 
-  onMount(() => {
+  onMount(async () => {
     document.title = "trust issues.";
     document.body.style.background = "black";
     document.documentElement.style.background = "black";
@@ -25,6 +32,22 @@ const Vent: Component = () => {
       lost();
       localStorage.setItem("IW", "true");
     }, 5555);
+
+    try {
+      const ventsContent = await fetch("https://13373333.one/bittersweet/vent", {
+        method: "GET",
+        credentials: "include",
+      });
+
+      if (ventsContent.status >= 400) {
+        return alert("Unable to retrieve vents listing from the server.");
+      };
+
+      setVents(await ventsContent.json());
+    } catch (error) {
+      console.error(error);
+      return alert(error);
+    };
   });
 
   return (
@@ -39,11 +62,11 @@ const Vent: Component = () => {
 
       {/* list */}
       <div class={Style.vents} ref={(evt) => _vents = evt}>
-        <For each={Vents}>
+        <For each={vents()}>
           {(ctx) => {
             return (
               <div class={Style.vent_content}>
-                <div class={Style.vent_value} innerHTML={ctx.content}> </div>
+                <div class={Style.vent_value} innerHTML={ctx.message}> </div>
 
                 {() => {
                   if (ctx.images) {
