@@ -27,7 +27,9 @@ export const sequelize = new Sequelize({
   database: secret.parsed["POSTGRES_DATABASE"],
   host: secret.parsed["POSTGRES_HOST"],
   dialectOptions: {
-    ssl: readFileSync(path.join(__dirname, secret.parsed["POSTGRES_CRT_FILENAME"]))
+    ssl: {
+      ca: readFileSync(path.join(__dirname, secret.parsed["POSTGRES_CRT_FILENAME"]))
+    }
   }
 });
 
