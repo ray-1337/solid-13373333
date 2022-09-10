@@ -63,9 +63,9 @@ const Vent: Component = () => {
       {/* list */}
       <div class={Style.vents} ref={(evt) => _vents = evt}>
         <For each={vents()?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())}>
-          {(ctx) => {
+          {(ctx, index) => {
             return (
-              <div class={Style.vent_content}>
+              <div class={Style.vent_content} style={{border: index() == 0 ? "2px solid 363636" : undefined}}>
                 <div class={Style.vent_value} innerHTML={ctx.message}> </div>
 
                 {() => {
