@@ -62,7 +62,7 @@ const Vent: Component = () => {
 
       {/* list */}
       <div class={Style.vents} ref={(evt) => _vents = evt}>
-        <For each={vents()}>
+        <For each={vents()?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())}>
           {(ctx) => {
             return (
               <div class={Style.vent_content}>
