@@ -36,6 +36,7 @@ import {
   siElectron,
   siPostman,
   siPostcss,
+  siAutoprefixer,
   siRoblox, // roblox studio*
 
   siRust,
@@ -134,7 +135,8 @@ function IconList(): Array<GeneralListType> {
 
   let icon = {
     language: [siJavascript, siTypescript, siHtml5, siCss3],
-    technology: [siReact, siWebpack, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss],    interested: [siRust, siNextdotjs, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron]
+    technology: [siReact, siWebpack, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+    interested: [siRust, siNextdotjs, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron]
   };
 
   for (const ctx of Object.entries(icon)) {

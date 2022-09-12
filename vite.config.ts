@@ -6,6 +6,9 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import viteCSP from "vite-plugin-csp";
 
 import dotenv from "dotenv";
+
+import autoprefixer from "autoprefixer";
+
 const env = dotenv.config({path: process.cwd() + "/.env"});
 
 const oneTimeRenderCode = Util.generateString(12);
@@ -44,7 +47,6 @@ export default defineConfig({
     cssCodeSplit: false,
     minify: true,
     target: 'esnext',
-    // polyfillDynamicImport: false,
     rollupOptions: {
       output: {
         assetFileNames: () => {
@@ -64,5 +66,11 @@ export default defineConfig({
 
   preview: {
     port: Number(env.parsed?.["PORT"] || 5173)
+  },
+
+  css: {
+    postcss: {
+      plugins: [ autoprefixer({ supports: true }) ],
+    }
   }
 });
