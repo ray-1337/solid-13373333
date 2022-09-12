@@ -56,7 +56,7 @@ const Vent: Component = () => {
       <div class={Style.intro} ref={(evt) => introHead = evt}>
         <div class={Style.intro_warning} ref={(evt) => introWarning = evt}>
           <h1>Warning</h1>
-          <p>This page contains self-harm and suicide topic. Be aware.</p>
+          <p>This page contains self-harm, suicide, and emotionally sensitive topic. Please be aware.</p>
         </div>
       </div>
 
