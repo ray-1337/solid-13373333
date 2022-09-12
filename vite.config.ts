@@ -70,7 +70,7 @@ export default defineConfig({
 
   css: {
     postcss: {
-      plugins: [ autoprefixer({ supports: true }) ],
+      plugins: process.env.npm_lifecycle_event == "dev" ? [] : [ autoprefixer({ supports: true }) ],
     }
   }
 });

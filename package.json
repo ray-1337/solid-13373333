@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "vite",
-    "dev": "vite",
+    "dev": "vite --mode='development'",
     "build": "vite build",
     "serve": "vite preview",
     "preview": "rm -rf dist && mkdir dist && yarn build && yarn serve",
