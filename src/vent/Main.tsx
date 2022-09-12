@@ -81,7 +81,7 @@ const Vent: Component = () => {
                 }}
 
                 <div class={Style.vent_date}>
-                  <p>{new Date(ctx.date).toLocaleString()}</p>
+                  <p>{new Date(ctx.date).toLocaleString("en-US", {hour12: false})}</p>
                 </div>
               </div>
             );
