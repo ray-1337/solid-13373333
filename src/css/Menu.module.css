@@ -107,7 +107,7 @@
 
 .panel ul li:after {
   transition: width 500ms var(--t_quart);
-  background-color: white;
+  background-color: black;
   content: "";
   display: block;
   height: 1px;
