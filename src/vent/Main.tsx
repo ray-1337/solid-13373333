@@ -19,19 +19,16 @@ const Vent: Component = () => {
     document.body.style.background = "black";
     document.documentElement.style.background = "black";
 
-    // intro manipulation
-    const lost = () => {
+    const introPlayedBefore = Boolean(localStorage.getItem("IW"));
+    const lostInTheNoise = () => {
       introHead.style.display = "none";
       document.documentElement.style.overflow = "auto";
       setTimeout(() => _vents.classList.add(Style.VWplayed), 1000);
     };
 
-    const introPlayed = Boolean(localStorage.getItem("IW")) || false;
-    !introPlayed ? introWarning.classList.add(Style.IWplayed) : lost();
-    setTimeout(() => {
-      lost();
-      localStorage.setItem("IW", "true");
-    }, 5555);
+    if (introPlayedBefore) {
+      lostInTheNoise();
+    };
 
     try {
       const ventsContent = await fetch("https://13373333.one/bittersweet/vent", {
@@ -41,6 +38,15 @@ const Vent: Component = () => {
 
       if (ventsContent.status >= 400) {
         return alert("Unable to retrieve vents listing from the server.");
+      };
+
+      if (!introPlayedBefore) {
+        introWarning.classList.add(Style.IWplayed);
+        
+        setTimeout(() => {
+          lostInTheNoise();
+          localStorage.setItem("IW", "true");
+        }, 5555);
       };
 
       setVents(await ventsContent.json());
