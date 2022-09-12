@@ -1,166 +1,89 @@
-.music > h1 {
-  color: #000;
-  font-size: 3.5em;
-  letter-spacing: 2px
-}
-
-.music > p {
-  color: #000;
-  letter-spacing: .75px;
-  margin-top: 1em
-}
-
-.favourite {
-  margin: 2.5em 0 5em
-}
-
-.fav_title {
-  align-items: center;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between
-}
-
-.fav_title h1 {
-  color: #000;
-  font-size: 1.25em;
-  width: 35%;
-  letter-spacing: 0.75px;
-}
-
-.fav_title span {
-  background: #000;
-  height: 2.5px;
-  margin-left: 1em;
-  width: 90%
-}
-
-.fav_list {
-  cursor: grab;
-  display: flex;
-  display: -webkit-flex;
-  margin: 1em 0;
-  overflow-x: auto;
-  overflow-y: hidden
-}
-
-.fav_list.grab {
-  cursor: grabbing
-}
-
-.track {
-  margin: unset;
+.spotify_music_outsider {
+  left: 0;
   position: relative;
-  width: max-content
 }
 
-.track_metadata h3 {
-  letter-spacing: 1px
+.spotify_music {
+  position: relative;
+  left: 0;
 }
 
-.track_metadata p {
-  font-size: .8em;
-  letter-spacing: 1px
+.spotify_music_title {
+  background: #121112;
+  padding: 3rem;
 }
 
-.track_visit a:hover {
-  opacity: .5
+.spotify_music_title h1 {
+  font-weight: 500;
+  font-size: 3em;
+  margin: 1rem 0;
 }
 
-.track_visit a {
-  -webkit-transition: opacity 125ms ease;
-  -moz-transition: opacity 125ms ease;
-  -o-transition: opacity 125ms ease;
-  color: #fff;
-  font-family: var(--paragraphFonts);
-  font-size: .9em;
-  letter-spacing: 2px;
-  text-decoration: unset;
-  text-underline-offset: 0;
-  transition: opacity 125ms ease
+.spotify_music_title p {
+  font-weight: lighter;
+  width: 50%;
 }
 
-.track:hover .track_info .track_metadata,
-.track:hover .track_info .track_visit {
-  --normaleTranslate: translateY(0%);
-  -webkit-transform: var(--normaleTranslate);
-  -moz-transform: var(--normaleTranslate);
-  -o-transform: var(--normaleTranslate);
-  transform: var(--normaleTranslate)
-}
-
-.fav_list::-webkit-scrollbar {
-  height: 6px
-}
-
-.track .track_info .track_metadata,
-.track .track_info .track_visit {
-  --translateY: translateY(-200%);
-  --translateTiming: 250ms;
-  -webkit-transform: var(--translateY);
-  -moz-transform: var(--translateY);
-  -o-transform: var(--translateY);
-  -webkit-transition: -webkit-transform var(--translateTiming) ease;
-  -moz-transition: -moz-transform var(--translateTiming) ease;
-  -o-transition: -o-transform var(--translateTiming) ease;
-  transform: var(--translateY);
-  transition: transform var(--translateTiming) ease
-}
-
-.track_info {
+.spotify_playlist_classify {
   display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  overflow: hidden;
-  padding: 1em;
-  position: absolute;
+  flex-direction: row;
   width: 100%;
-  z-index: 10
 }
 
-.track_artwork,
-.track_artwork img {
-  height: 325px;
+.spotify_playlist {
+  display: flex;
   position: relative;
-  width: 325px
+  cursor: pointer;
+  flex-direction: column;
 }
 
-.track:nth-child(n+1):nth-child(-n+3):before {
-  background: #000;
-  content: "";
-  display: block;
-  height: 100%;
-  position: relative;
-  position: absolute;
+.spotify_playlist_image img {
   width: 100%;
-  z-index: 150
+  object-fit: cover;
+  object-position: center center;
 }
 
-.music.show .favourite section .fav_list .track:before {
-  height: 0%
+.spotify_playlist_image {
+  width: 100%;
+  transition: filter 500ms var(--expoOut);
 }
 
-.music.show .favourite section .fav_list .track:nth-child(n+1):nth-child(-n+3):before {
-  -webkit-transition: height 1.25s var(--t_expo_mod) var(--delayance);
-  -moz-transition: height 1.25s var(--t_expo_mod) var(--delayance);
-  -o-transition: height 1.25s var(--t_expo_mod) var(--delayance);
-  --delayance: 0ms;
-  transition: height 1.25s var(--t_expo_mod) var(--delayance)
+.spotify_playlist:hover .spotify_playlist_title {
+  opacity: 1;
 }
 
-.music.show .favourite section .fav_list .track:nth-child(n+2):nth-child(-n+3):before {
-  --delayance: 250ms
+.spotify_playlist:hover .spotify_playlist_image {
+  filter: invert(1);
 }
 
-.music.show .favourite section .fav_list .track:nth-child(n+3):nth-child(-n+3):before {
-  --delayance: 500ms
+.spotify_playlist_title {
+  position: absolute;
+  bottom: 5px;
+  padding: 1.25rem;
+  background: linear-gradient(0deg, white 0%, transparent 100%);
+  width: 100%;
+  opacity: 0;
+  transition: opacity 75ms linear;
 }
 
-@media only screen and (max-width:500px) {
-  .track_artwork,
-  .track_artwork img {
-    height: 250px;
-    position: relative;
-    width: 250px
+.spotify_playlist_title h1 {
+  margin: 0.125rem 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.spotify_playlist_title p {
+  font-weight: 500;
+  color: black;
+}
+
+@media only screen and (max-width: 992px) {
+  .spotify_playlist_classify {
+    flex-direction: column;
+  }
+
+  .spotify_playlist_image {
+    margin-bottom: -5px;
   }
 }

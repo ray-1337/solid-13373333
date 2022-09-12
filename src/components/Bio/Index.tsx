@@ -73,7 +73,6 @@ const Index: Component = () => {
       <hr />
       <Bio_Occupation></Bio_Occupation>
 
-      <hr/>
       <Bio_Music></Bio_Music>
 
       <hr/>
