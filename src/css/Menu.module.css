@@ -105,24 +105,17 @@
   width: max-content
 }
 
-.panel ul li,
 .panel ul li:after {
-  -webkit-transition: var(--transition);
-  -moz-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition)
-}
-
-.panel ul li:after {
-  --transition: width 500ms var(--t_quart);
-  background-color: black;
+  transition: width 500ms var(--t_quart);
+  background-color: white;
   content: "";
   display: block;
   height: 1px;
   left: 0;
   position: relative;
   top: .25rem;
-  width: 0
+  width: 0;
+  filter: invert(1);
 }
 
 .panel ul li:hover {
