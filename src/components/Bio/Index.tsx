@@ -6,7 +6,7 @@ import * as Util from "../../Util";
 
 import PanelContext from "../Panel.Context";
 
-import personalImage from "../../assets/images/personal_content/155536.webp";
+import personalImage from "../../assets/images/personal_content/liv2.webp";
 
 import Bio_Info from './Info';
 import Bio_Music from './Music';

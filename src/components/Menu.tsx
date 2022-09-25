@@ -5,7 +5,7 @@ import PanelContext, {list as PanelList} from "./Panel.Context";
 
 import style from "../css/Menu.module.css";
 
-import menuMe from "../assets/images/personal_content/limbo.webp";
+import menuMe from "../assets/images/personal_content/liv1.webp";
 import menuSocial from "../assets/images/personal_content/luckytohaveyou.webp";
 import menuProject from "../assets/images/tab/project.webp";
 import menuGear from "../assets/images/tab/gear.webp";
