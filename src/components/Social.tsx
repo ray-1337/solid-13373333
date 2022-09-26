@@ -51,7 +51,7 @@ export default Social;
 function List() {
   return [
     {
-      url: "https://instagram.com/ray_2221",
+      url: "https://instagram.com/goodfaith_forever",
       title: "Instagram",
       colorArray: ["#002296", "#82008f", "#c0007a", "#ea0c5f", "#ff5341", "#ff8320", "#f6ba00"]
     },
