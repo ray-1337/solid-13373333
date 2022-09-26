@@ -139,6 +139,11 @@ function List() {
       url: "https://genius.com/ray_1337",
       title: "Genius",
       colorArray: ["#121112", "#ffff64"]
+    },
+    {
+      url: "https://e926.net/users/1125753",
+      title: "E926/E621",
+      colorArray: ["#144058"]
     }
   ]
 };
