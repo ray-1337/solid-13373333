@@ -1,4 +1,5 @@
 import { Component, createEffect, For, JSX } from "solid-js";
+import { shuffleArray } from "../Util";
 
 import PanelContext from "./Panel.Context";
 
@@ -49,7 +50,7 @@ const Social: Component = () => {
 export default Social;
 
 function List() {
-  return [
+  const list = [
     {
       url: "https://instagram.com/goodfaith_forever",
       title: "Instagram",
@@ -145,5 +146,7 @@ function List() {
       title: "E926/E621",
       colorArray: ["#144058"]
     }
-  ]
+  ];
+
+  return shuffleArray(list);
 };
